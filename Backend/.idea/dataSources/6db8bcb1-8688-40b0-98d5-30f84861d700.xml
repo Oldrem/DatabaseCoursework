@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="studs@localhost [2]">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.16">
+    <root id="1">
+      <ServerVersion>11.3</ServerVersion>
+      <StartupTime>1610932162</StartupTime>
+    </root>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>13012</ObjectId>
+      <Comment>default administrative connection database</Comment>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="3" parent="1" name="studs">
+      <ObjectId>16393</ObjectId>
+      <Comment>Для лабы</Comment>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>1893</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Relations>sequence|table|16587|16589|1
+sequence|table|16621|16623|1
+sequence|table|16632|16634|1
+sequence|table|16660|16662|1
+sequence|table|16671|16673|1
+sequence|table|16684|16686|1
+sequence|table|16703|16705|1
+sequence|table|16729|16731|1
+sequence|table|16956|16958|1
+</Relations>
+    </database>
+    <role id="4" parent="1" name="pg_execute_server_program">
+      <ObjectId>4571</ObjectId>
+    </role>
+    <role id="5" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+    </role>
+    <role id="6" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+    </role>
+    <role id="7" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+    </role>
+    <role id="8" parent="1" name="pg_read_server_files">
+      <ObjectId>4569</ObjectId>
+    </role>
+    <role id="9" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+    </role>
+    <role id="10" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+    </role>
+    <role id="11" parent="1" name="pg_write_server_files">
+      <ObjectId>4570</ObjectId>
+    </role>
+    <role id="12" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="13" parent="3" name="information_schema">
+      <ObjectId>12716</ObjectId>
+      <StateNumber>366</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="14" parent="3" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+      <StateNumber>359</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="15" parent="3" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <StateNumber>360</StateNumber>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>1894</IntrospectionStateNumber>
+      <Current>1</Current>
+    </schema>
+    <access-method id="16" parent="3" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="17" parent="3" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="18" parent="3" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="19" parent="3" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="20" parent="3" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="21" parent="3" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <extension id="22" parent="3" name="plpgsql">
+      <ObjectId>12998</ObjectId>
+      <Comment>PL/pgSQL procedural language</Comment>
+      <StateNumber>519</StateNumber>
+      <Version>1.0</Version>
+      <SchemaName>pg_catalog</SchemaName>
+      <SchemaId>11</SchemaId>
+    </extension>
+    <sequence id="23" parent="15" name="hibernate_sequence">
+      <ObjectId>16894</ObjectId>
+      <StateNumber>1846</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <sequence id="24" parent="15" name="animal_animal_id_seq">
+      <ObjectId>16684</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="25" parent="15" name="animal_type_animal_type_id_seq">
+      <ObjectId>16671</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="26" parent="15" name="colonist_colonist_id_seq">
+      <ObjectId>16956</ObjectId>
+      <StateNumber>1878</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="27" parent="15" name="colony_colony_id_seq">
+      <ObjectId>16703</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="28" parent="15" name="occupation_occupation_id_seq">
+      <ObjectId>16587</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="29" parent="15" name="resource_resource_id_seq">
+      <ObjectId>16660</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="30" parent="15" name="room_room_id_seq">
+      <ObjectId>16632</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="31" parent="15" name="room_type_room_type_id_seq">
+      <ObjectId>16621</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="32" parent="15" name="transaction_transaction_id_seq">
+      <ObjectId>16729</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <object-type id="33" parent="15" name="access_level">
+      <ObjectId>16614</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+      <SubKind>enum</SubKind>
+      <Labels>open
+shared
+professional</Labels>
+      <SubCategory>enum</SubCategory>
+    </object-type>
+    <table id="34" parent="15" name="animal">
+      <ObjectId>16686</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <table id="35" parent="15" name="animal_type">
+      <ObjectId>16673</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <table id="36" parent="15" name="colonist">
+      <ObjectId>16958</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1878</StateNumber>
+    </table>
+    <table id="37" parent="15" name="colonist_occupation">
+      <ObjectId>16598</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <table id="38" parent="15" name="colony">
+      <ObjectId>16705</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <table id="39" parent="15" name="colony_relation">
+      <ObjectId>16712</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <table id="40" parent="15" name="occupation">
+      <ObjectId>16589</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <table id="41" parent="15" name="occupation_room">
+      <ObjectId>16645</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <table id="42" parent="15" name="relationship">
+      <ObjectId>16567</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <table id="43" parent="15" name="resource">
+      <ObjectId>16662</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <table id="44" parent="15" name="room">
+      <ObjectId>16634</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <table id="45" parent="15" name="room_type">
+      <ObjectId>16623</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <table id="46" parent="15" name="stored_resource">
+      <ObjectId>16752</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <table id="47" parent="15" name="transaction">
+      <ObjectId>16731</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1782</StateNumber>
+    </table>
+    <column id="48" parent="34" name="animal_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <DefaultExpression>nextval(&apos;animal_animal_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="49" parent="34" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="50" parent="34" name="animal_type_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="51" parent="34" name="responsible_colonist_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="52" parent="34" name="training_progress">
+      <Position>5</Position>
+      <DataType>smallint|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>21</TypeId>
+    </column>
+    <column id="53" parent="34" name="last_resource_collection">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="54" parent="34" name="animal_pkey">
+      <ObjectId>16691</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>animal_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <index id="55" parent="34" name="animal_colonist_index">
+      <ObjectId>16770</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>responsible_colonist_id</ColNames>
+    </index>
+    <key id="56" parent="34" name="animal_pkey">
+      <ObjectId>16692</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>animal_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>animal_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="57" parent="34" name="animal_animal_type_id_fkey">
+      <ObjectId>16693</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>animal_type_id</ColNames>
+      <RefTableId>16673</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>animal_type</RefTableName>
+      <RefKeyName>animal_type_pkey</RefKeyName>
+      <RefColNames>animal_type_id</RefColNames>
+    </foreign-key>
+    <check id="58" parent="34" name="train_progress">
+      <ObjectId>16690</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>training_progress</ColNames>
+      <Predicate>(training_progress &gt;= 0) AND (training_progress &lt;= 100)</Predicate>
+    </check>
+    <column id="59" parent="35" name="animal_type_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <DefaultExpression>nextval(&apos;animal_type_animal_type_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="60" parent="35" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="61" parent="35" name="can_be_trained">
+      <Position>3</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="62" parent="35" name="resource_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="63" parent="35" name="animal_type_pkey">
+      <ObjectId>16677</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>animal_type_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="64" parent="35" name="animal_type_pkey">
+      <ObjectId>16678</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>animal_type_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>animal_type_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="65" parent="35" name="animal_type_resource_id_fkey">
+      <ObjectId>16679</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>resource_id</ColNames>
+      <RefTableId>16662</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>resource</RefTableName>
+      <RefKeyName>resource_pkey</RefKeyName>
+      <RefColNames>resource_id</RefColNames>
+      <OnDelete>set-null</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="66" parent="36" name="colonist_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1878</StateNumber>
+      <DefaultExpression>nextval(&apos;colonist_colonist_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="67" parent="36" name="first_name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1878</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="68" parent="36" name="last_name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1878</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="69" parent="36" name="nickname">
+      <Position>4</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>1878</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="70" parent="36" name="photo">
+      <Position>5</Position>
+      <DataType>oid|0s</DataType>
+      <StateNumber>1878</StateNumber>
+      <TypeId>26</TypeId>
+    </column>
+    <column id="71" parent="36" name="birth_date">
+      <Position>6</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>1878</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="72" parent="36" name="colony_join_date">
+      <Position>7</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>1878</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <index id="73" parent="36" name="colonist_pkey">
+      <ObjectId>16962</ObjectId>
+      <StateNumber>1878</StateNumber>
+      <ColNames>colonist_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="74" parent="36" name="colonist_pkey">
+      <ObjectId>16963</ObjectId>
+      <StateNumber>1878</StateNumber>
+      <ColNames>colonist_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>colonist_pkey</UnderlyingIndexName>
+    </key>
+    <column id="75" parent="37" name="colonist_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="76" parent="37" name="occupation_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="77" parent="37" name="colonist_occupation_pkey">
+      <ObjectId>16601</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colonist_id
+occupation_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="78" parent="37" name="colonist_occupation_pkey">
+      <ObjectId>16602</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colonist_id
+occupation_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>colonist_occupation_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="79" parent="37" name="colonist_occupation_occupation_id_fkey">
+      <ObjectId>16608</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>occupation_id</ColNames>
+      <RefTableId>16589</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>occupation</RefTableName>
+      <RefKeyName>occupation_pkey</RefKeyName>
+      <RefColNames>occupation_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="80" parent="38" name="colony_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <DefaultExpression>nextval(&apos;colony_colony_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="81" parent="38" name="name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="82" parent="38" name="leader_name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="83" parent="38" name="leader_last_name">
+      <Position>4</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="84" parent="38" name="population">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="85" parent="38" name="colony_pkey">
+      <ObjectId>16710</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colony_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="86" parent="38" name="colony_pkey">
+      <ObjectId>16711</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colony_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>colony_pkey</UnderlyingIndexName>
+    </key>
+    <check id="87" parent="38" name="positive_population">
+      <ObjectId>16709</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>population</ColNames>
+      <Predicate>population &gt;= 0</Predicate>
+    </check>
+    <column id="88" parent="39" name="colony1_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="89" parent="39" name="colony2_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="90" parent="39" name="level">
+      <Position>3</Position>
+      <DataType>smallint|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>21</TypeId>
+    </column>
+    <index id="91" parent="39" name="colony_relation_pkey">
+      <ObjectId>16717</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colony1_id
+colony2_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="92" parent="39" name="colony_relation_pkey">
+      <ObjectId>16718</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colony1_id
+colony2_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>colony_relation_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="93" parent="39" name="colony_relation_colony1_id_fkey">
+      <ObjectId>16719</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colony1_id</ColNames>
+      <RefTableId>16705</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>colony</RefTableName>
+      <RefKeyName>colony_pkey</RefKeyName>
+      <RefColNames>colony_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="94" parent="39" name="colony_relation_colony2_id_fkey">
+      <ObjectId>16724</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colony2_id</ColNames>
+      <RefTableId>16705</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>colony</RefTableName>
+      <RefKeyName>colony_pkey</RefKeyName>
+      <RefColNames>colony_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <check id="95" parent="39" name="relation_boundaries">
+      <ObjectId>16716</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>level</ColNames>
+      <Predicate>(level &gt;= &apos;-100&apos;::integer) AND (level &lt;= 100)</Predicate>
+    </check>
+    <check id="96" parent="39" name="no_self_relation">
+      <ObjectId>16715</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colony1_id
+colony2_id</ColNames>
+      <Predicate>colony1_id &lt;&gt; colony2_id</Predicate>
+    </check>
+    <column id="97" parent="40" name="occupation_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <DefaultExpression>nextval(&apos;occupation_occupation_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="98" parent="40" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="99" parent="40" name="description">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="100" parent="40" name="time_starts">
+      <Position>4</Position>
+      <DataType>time|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>1083</TypeId>
+    </column>
+    <column id="101" parent="40" name="time_ends">
+      <Position>5</Position>
+      <DataType>time|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>1083</TypeId>
+    </column>
+    <index id="102" parent="40" name="occupation_pkey">
+      <ObjectId>16596</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>occupation_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="103" parent="40" name="occupation_pkey">
+      <ObjectId>16597</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>occupation_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>occupation_pkey</UnderlyingIndexName>
+    </key>
+    <column id="104" parent="41" name="occupation_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="105" parent="41" name="room_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="106" parent="41" name="occupation_room_pkey">
+      <ObjectId>16648</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>occupation_id
+room_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="107" parent="41" name="occupation_room_pkey">
+      <ObjectId>16649</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>occupation_id
+room_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>occupation_room_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="108" parent="41" name="occupation_room_occupation_id_fkey">
+      <ObjectId>16650</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>occupation_id</ColNames>
+      <RefTableId>16589</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>occupation</RefTableName>
+      <RefKeyName>occupation_pkey</RefKeyName>
+      <RefColNames>occupation_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="109" parent="41" name="occupation_room_room_id_fkey">
+      <ObjectId>16655</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>room_id</ColNames>
+      <RefTableId>16634</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>room</RefTableName>
+      <RefKeyName>room_pkey</RefKeyName>
+      <RefColNames>room_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="110" parent="42" name="colonist1_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="111" parent="42" name="colonist2_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="112" parent="42" name="level">
+      <Position>3</Position>
+      <DataType>smallint|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>21</TypeId>
+    </column>
+    <column id="113" parent="42" name="type">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <index id="114" parent="42" name="relationship_pkey">
+      <ObjectId>16575</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colonist1_id
+colonist2_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="115" parent="42" name="relationship_pkey">
+      <ObjectId>16576</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colonist1_id
+colonist2_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>relationship_pkey</UnderlyingIndexName>
+    </key>
+    <check id="116" parent="42" name="relation_boundaries">
+      <ObjectId>16571</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>level</ColNames>
+      <Predicate>(level &gt;= &apos;-100&apos;::integer) AND (level &lt;= 100)</Predicate>
+    </check>
+    <check id="117" parent="42" name="no_self_relation">
+      <ObjectId>16570</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colonist1_id
+colonist2_id</ColNames>
+      <Predicate>colonist1_id &lt;&gt; colonist2_id</Predicate>
+    </check>
+    <column id="118" parent="43" name="resource_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <DefaultExpression>nextval(&apos;resource_resource_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="119" parent="43" name="name">
+      <Position>2</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="120" parent="43" name="price">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="121" parent="43" name="flammability">
+      <Position>4</Position>
+      <DataType>smallint|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>21</TypeId>
+    </column>
+    <column id="122" parent="43" name="is_forbidden">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="123" parent="43" name="resource_pkey">
+      <ObjectId>16669</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>resource_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="124" parent="43" name="resource_pkey">
+      <ObjectId>16670</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>resource_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>resource_pkey</UnderlyingIndexName>
+    </key>
+    <check id="125" parent="43" name="flammability_boundaries">
+      <ObjectId>16668</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>flammability</ColNames>
+      <Predicate>(flammability &gt;= 0) AND (flammability &lt;= 100)</Predicate>
+    </check>
+    <check id="126" parent="43" name="positive_price">
+      <ObjectId>16667</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>price</ColNames>
+      <Predicate>price &gt;= 0</Predicate>
+    </check>
+    <column id="127" parent="44" name="room_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <DefaultExpression>nextval(&apos;room_room_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="128" parent="44" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="129" parent="44" name="room_type_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="130" parent="44" name="area">
+      <Position>4</Position>
+      <DataType>smallint|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>21</TypeId>
+    </column>
+    <index id="131" parent="44" name="room_pkey">
+      <ObjectId>16638</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>room_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="132" parent="44" name="room_pkey">
+      <ObjectId>16639</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>room_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>room_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="133" parent="44" name="room_room_type_id_fkey">
+      <ObjectId>16640</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>room_type_id</ColNames>
+      <RefTableId>16623</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>room_type</RefTableName>
+      <RefKeyName>room_type_pkey</RefKeyName>
+      <RefColNames>room_type_id</RefColNames>
+      <OnDelete>set-null</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="134" parent="45" name="room_type_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <DefaultExpression>nextval(&apos;room_type_room_type_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="135" parent="45" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="136" parent="45" name="access_level">
+      <Position>3</Position>
+      <DataType>access_level|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>16614</TypeId>
+    </column>
+    <column id="137" parent="45" name="required_equipment">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="138" parent="45" name="sanitary_conditions">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <index id="139" parent="45" name="room_type_pkey">
+      <ObjectId>16630</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>room_type_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="140" parent="45" name="room_type_pkey">
+      <ObjectId>16631</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>room_type_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>room_type_pkey</UnderlyingIndexName>
+    </key>
+    <column id="141" parent="46" name="resource_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="142" parent="46" name="room_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="143" parent="46" name="amount">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="144" parent="46" name="stored_resource_pkey">
+      <ObjectId>16756</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>resource_id
+room_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="145" parent="46" name="stored_resource_pkey">
+      <ObjectId>16757</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>resource_id
+room_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>stored_resource_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="146" parent="46" name="stored_resource_resource_id_fkey">
+      <ObjectId>16758</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>resource_id</ColNames>
+      <RefTableId>16662</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>resource</RefTableName>
+      <RefKeyName>resource_pkey</RefKeyName>
+      <RefColNames>resource_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="147" parent="46" name="stored_resource_room_id_fkey">
+      <ObjectId>16763</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>room_id</ColNames>
+      <RefTableId>16634</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>room</RefTableName>
+      <RefKeyName>room_pkey</RefKeyName>
+      <RefColNames>room_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <check id="148" parent="46" name="positive_stored_resource_amount">
+      <ObjectId>16755</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>amount</ColNames>
+      <Predicate>amount &gt;= 0</Predicate>
+    </check>
+    <column id="149" parent="47" name="transaction_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <DefaultExpression>nextval(&apos;transaction_transaction_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="150" parent="47" name="resource_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="151" parent="47" name="room_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="152" parent="47" name="colony_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="153" parent="47" name="amount">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="154" parent="47" name="transaction_pkey">
+      <ObjectId>16735</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>transaction_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <index id="155" parent="47" name="transaction_resource_index">
+      <ObjectId>16768</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>resource_id</ColNames>
+    </index>
+    <index id="156" parent="47" name="transaction_room_index">
+      <ObjectId>16769</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>room_id</ColNames>
+    </index>
+    <key id="157" parent="47" name="transaction_pkey">
+      <ObjectId>16736</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>transaction_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>transaction_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="158" parent="47" name="transaction_resource_id_fkey">
+      <ObjectId>16737</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>resource_id</ColNames>
+      <RefTableId>16662</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>resource</RefTableName>
+      <RefKeyName>resource_pkey</RefKeyName>
+      <RefColNames>resource_id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="159" parent="47" name="transaction_room_id_fkey">
+      <ObjectId>16742</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>room_id</ColNames>
+      <RefTableId>16634</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>room</RefTableName>
+      <RefKeyName>room_pkey</RefKeyName>
+      <RefColNames>room_id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="160" parent="47" name="transaction_colony_id_fkey">
+      <ObjectId>16747</ObjectId>
+      <StateNumber>1782</StateNumber>
+      <ColNames>colony_id</ColNames>
+      <RefTableId>16705</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>colony</RefTableName>
+      <RefKeyName>colony_pkey</RefKeyName>
+      <RefColNames>colony_id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+  </database-model>
+</dataSource>
