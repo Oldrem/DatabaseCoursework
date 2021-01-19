@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavigationBar from './NavigationBar';
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
@@ -35,7 +36,12 @@ class GroupList extends Component {
         const {colonists, isLoading} = this.state;
 
         if (isLoading) {
-            return <p>Loading...</p>;
+            return(
+                <div>
+                    <NavigationBar/>
+                    <p>Loading...</p>
+                </div>
+            ) ;
         }
 
         const colonistList = colonists.map(colonist => {
@@ -56,6 +62,7 @@ class GroupList extends Component {
 
         return (
             <div>
+                <NavigationBar/>
                 <Container fluid>
                     <div className="float-right">
                         <Button color="success" tag={Link} to="/colonists/new">Add Colonist?</Button>
