@@ -7,6 +7,7 @@ class NavigationBar extends Component {
         return (
             <div>
                 <Container fluid>
+                    <Button color="link"><Link to="/">Home</Link></Button>
                     <Button color="link"><Link to="/colonists">Colonists</Link></Button>
                     <Button color="link"><Link to="/animals">Animals</Link></Button>
                 </Container>
