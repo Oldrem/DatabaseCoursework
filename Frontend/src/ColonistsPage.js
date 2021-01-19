@@ -3,7 +3,7 @@ import NavigationBar from './NavigationBar';
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-class GroupList extends Component {
+class Colonists extends Component {
 
     constructor(props) {
         super(props);
@@ -38,7 +38,6 @@ class GroupList extends Component {
         if (isLoading) {
             return(
                 <div>
-                    <NavigationBar/>
                     <p>Loading...</p>
                 </div>
             ) ;
@@ -62,7 +61,6 @@ class GroupList extends Component {
 
         return (
             <div>
-                <NavigationBar/>
                 <Container fluid>
                     <div className="float-right">
                         <Button color="success" tag={Link} to="/colonists/new">Add Colonist?</Button>
@@ -88,4 +86,4 @@ class GroupList extends Component {
     }
 }
 
-export default GroupList;
+export default Colonists;
