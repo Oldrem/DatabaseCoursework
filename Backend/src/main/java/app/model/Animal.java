@@ -8,14 +8,14 @@ import javax.persistence.Id;
 public class Animal {
     private @Id @GeneratedValue Long animalId;
     private String name;
-    private long animalTypeId;
-    private long responsibleColonistId;
-    private int trainingProgress;
+    private Long animalTypeId;
+    private Long responsibleColonistId;
+    private Integer trainingProgress;
     private String lastResourceCollection;
 
     private Animal() {}
 
-    public Animal(String name, long animalTypeId, long responsibleColonistId, int trainingProgress, String lastResourceCollection) {
+    public Animal(String name, Long animalTypeId, Long responsibleColonistId, Integer trainingProgress, String lastResourceCollection) {
         this.name = name;
         this.animalTypeId = animalTypeId;
         this.responsibleColonistId = responsibleColonistId;
@@ -39,27 +39,27 @@ public class Animal {
         this.name = name;
     }
 
-    public long getAnimalTypeId() {
+    public Long getAnimalTypeId() {
         return animalTypeId;
     }
 
-    public void setAnimalTypeId(long animalTypeId) {
+    public void setAnimalTypeId(Long animalTypeId) {
         this.animalTypeId = animalTypeId;
     }
 
-    public long getResponsibleColonistId() {
+    public Long getResponsibleColonistId() {
         return responsibleColonistId;
     }
 
-    public void setResponsibleColonistId(long responsibleColonistId) {
+    public void setResponsibleColonistId(Long responsibleColonistId) {
         this.responsibleColonistId = responsibleColonistId;
     }
 
-    public int getTrainingProgress() {
+    public Integer getTrainingProgress() {
         return trainingProgress;
     }
 
-    public void setTrainingProgress(int trainingProgress) {
+    public void setTrainingProgress(Integer trainingProgress) {
         this.trainingProgress = trainingProgress;
     }
 
