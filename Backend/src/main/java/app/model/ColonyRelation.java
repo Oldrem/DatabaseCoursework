@@ -1,18 +1,16 @@
 package app.model;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "colony_relation")
 public class ColonyRelation {
     @EmbeddedId private ColonyRelationId colonyRelationId;
-    private int level;
+    private Integer level;
 
     private ColonyRelation() {}
 
-    public ColonyRelation(int level) {
+    public ColonyRelation(Integer level) {
         this.level = level;
     }
 
@@ -24,11 +22,11 @@ public class ColonyRelation {
         this.colonyRelationId = colonyRelationId;
     }
 
-    public int getLevel() {
+    public Integer getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(Integer level) {
         this.level = level;
     }
 }
