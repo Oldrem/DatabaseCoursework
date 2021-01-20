@@ -6,12 +6,12 @@ import javax.persistence.Entity;
 @Entity
 public class Relationship {
     @EmbeddedId private RelationshipId relationshipId;
-    private int level;
+    private Integer level;
     private String type;
 
     public Relationship() {}
 
-    public Relationship(long colonist1Id, long colonist2Id, int level, String type) {
+    public Relationship(long colonist1Id, long colonist2Id, Integer level, String type) {
         this.level = level;
         this.type = type;
     }
@@ -24,11 +24,11 @@ public class Relationship {
         this.relationshipId = relationshipId;
     }
 
-    public int getLevel() {
+    public Integer getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(Integer level) {
         this.level = level;
     }
 

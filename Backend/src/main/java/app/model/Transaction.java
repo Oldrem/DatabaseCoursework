@@ -7,14 +7,14 @@ import javax.persistence.Id;
 @Entity
 public class Transaction {
     private @Id @GeneratedValue Long transactionId;
-    private long resourceId;
-    private long roomId;
-    private long colonyId;
-    private int amount;
+    private Long resourceId;
+    private Long roomId;
+    private Long colonyId;
+    private Integer amount;
 
     private Transaction() {}
 
-    public Transaction(long resourceId, long roomId, long colonyId, int amount) {
+    public Transaction(Long resourceId, Long roomId, Long colonyId, Integer amount) {
         this.resourceId = resourceId;
         this.roomId = roomId;
         this.colonyId = colonyId;
@@ -29,35 +29,35 @@ public class Transaction {
         this.transactionId = transactionId;
     }
 
-    public long getResourceId() {
+    public Long getResourceId() {
         return resourceId;
     }
 
-    public void setResourceId(long resourceId) {
+    public void setResourceId(Long resourceId) {
         this.resourceId = resourceId;
     }
 
-    public long getRoomId() {
+    public Long getRoomId() {
         return roomId;
     }
 
-    public void setRoomId(long roomId) {
+    public void setRoomId(Long roomId) {
         this.roomId = roomId;
     }
 
-    public long getColonyId() {
+    public Long getColonyId() {
         return colonyId;
     }
 
-    public void setColonyId(long colonyId) {
+    public void setColonyId(Long colonyId) {
         this.colonyId = colonyId;
     }
 
-    public int getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(Integer amount) {
         this.amount = amount;
     }
 }

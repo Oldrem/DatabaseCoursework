@@ -5,29 +5,29 @@ import java.io.Serializable;
 
 @Embeddable
 public class StoredResourceId implements Serializable {
-    private long resourceId;
-    private long roomId;
+    private Long resource_id;
+    private Long room_id;
 
     private StoredResourceId() {}
 
-    public StoredResourceId(long resourceId, long roomId) {
-        this.resourceId = resourceId;
-        this.roomId = roomId;
+    public StoredResourceId(Long resourceId, Long roomId) {
+        this.resource_id = resourceId;
+        this.room_id = roomId;
     }
 
-    public long getResourceId() {
-        return resourceId;
+    public Long getResourceId() {
+        return resource_id;
     }
 
-    public void setResourceId(long resourceId) {
-        this.resourceId = resourceId;
+    public void setResourceId(Long resourceId) {
+        this.resource_id = resourceId;
     }
 
-    public long getRoomId() {
-        return roomId;
+    public Long getRoomId() {
+        return room_id;
     }
 
-    public void setRoomId(long roomId) {
-        this.roomId = roomId;
+    public void setRoomId(Long roomId) {
+        this.room_id = roomId;
     }
 }

@@ -8,12 +8,12 @@ import javax.persistence.Id;
 public class Room {
     private @Id @GeneratedValue Long roomId;
     private String name;
-    private long roomTypeId;
-    private int area;
+    private Long roomTypeId;
+    private Integer area;
 
     private Room() {}
 
-    public Room(String name, long roomTypeId, int area) {
+    public Room(String name, Long roomTypeId, Integer area) {
         this.name = name;
         this.roomTypeId = roomTypeId;
         this.area = area;
@@ -35,19 +35,19 @@ public class Room {
         this.name = name;
     }
 
-    public long getRoomTypeId() {
+    public Long getRoomTypeId() {
         return roomTypeId;
     }
 
-    public void setRoomTypeId(long roomTypeId) {
+    public void setRoomTypeId(Long roomTypeId) {
         this.roomTypeId = roomTypeId;
     }
 
-    public int getArea() {
+    public Integer getArea() {
         return area;
     }
 
-    public void setArea(int area) {
+    public void setArea(Integer area) {
         this.area = area;
     }
 }

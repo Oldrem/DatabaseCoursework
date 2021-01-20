@@ -5,29 +5,29 @@ import java.io.Serializable;
 
 @Embeddable
 public class RelationshipId implements Serializable {
-    private long colonist1Id;
-    private long colonist2Id;
+    private Long colonist1_id;
+    private Long colonist2_id;
 
     private RelationshipId() {}
 
-    public RelationshipId(long colonist1Id, long colonist2Id) {
-        this.colonist1Id = colonist1Id;
-        this.colonist2Id = colonist2Id;
+    public RelationshipId(Long colonist1Id, Long colonist2Id) {
+        this.colonist1_id = colonist1Id;
+        this.colonist2_id = colonist2Id;
     }
 
-    public long getColonist1Id() {
-        return colonist1Id;
+    public Long getColonist1Id() {
+        return colonist1_id;
     }
 
-    public void setColonist1Id(long colonist1Id) {
-        this.colonist1Id = colonist1Id;
+    public void setColonist1Id(Long colonist1Id) {
+        this.colonist1_id = colonist1Id;
     }
 
-    public long getColonist2Id() {
-        return colonist2Id;
+    public Long getColonist2Id() {
+        return colonist2_id;
     }
 
-    public void setColonist2Id(long colonist2Id) {
-        this.colonist2Id = colonist2Id;
+    public void setColonist2Id(Long colonist2Id) {
+        this.colonist2_id = colonist2Id;
     }
 }

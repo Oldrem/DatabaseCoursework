@@ -8,13 +8,13 @@ import javax.persistence.Id;
 public class Resource {
     private @Id @GeneratedValue Long resourceId;
     private String name;
-    private int price;
-    private int flammability;
+    private Integer price;
+    private Integer flammability;
     private boolean isForbidden;
 
     private Resource() {}
 
-    public Resource(String name, int price, int flammability, boolean isForbidden) {
+    public Resource(String name, Integer price, Integer flammability, boolean isForbidden) {
         this.name = name;
         this.price = price;
         this.flammability = flammability;
@@ -37,19 +37,19 @@ public class Resource {
         this.name = name;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
-    public int getFlammability() {
+    public Integer getFlammability() {
         return flammability;
     }
 
-    public void setFlammability(int flammability) {
+    public void setFlammability(Integer flammability) {
         this.flammability = flammability;
     }
 

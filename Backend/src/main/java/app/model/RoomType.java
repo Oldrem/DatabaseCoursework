@@ -3,8 +3,10 @@ package app.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "room_type")
 public class RoomType {
     private @Id @GeneratedValue Long roomTypeId;
     private String name;
