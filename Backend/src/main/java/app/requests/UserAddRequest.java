@@ -7,7 +7,7 @@ public class UserAddRequest {
     private String password;
 
     public User createUser(){
-        return new User(login, password);
+        return new User(login, password, "USER");
     }
 
     public void setLogin(String login) {

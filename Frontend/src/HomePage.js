@@ -6,7 +6,14 @@ class HomePage extends React.Component{
     constructor(props){
         super(props);
         if(this.props.user==="null") this.props.history.push("/login");
+        this.state = {role: []};
     }
+    componentDidMount() {
+        fetch('user/' + this.props.user)
+            .then(response => response.json())
+            .then(data => this.setState({role: data}));
+    }
+
     render() {
         return(
         <div className="main-wrapper">
@@ -14,6 +21,7 @@ class HomePage extends React.Component{
             <div className="Wrapper2">
             <div className="main">
                 <p className="login-name">Вы вошли как {this.props.user}</p>
+                <p className="login-name">Роль: {this.state.role}</p>
                 <button className="submit-button-main" onClick={this.exit}>Выйти</button><br/>
             </div>
             </div>

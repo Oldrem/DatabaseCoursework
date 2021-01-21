@@ -8,18 +8,21 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table(name = "s_users")
-@JsonIgnoreProperties({"points", "password","hibernateLazyInitializer", "handler"})
+@Table(name = "users")
+@JsonIgnoreProperties({"password","hibernateLazyInitializer", "handler"})
 public class User {
     @Id
     @Column(name = "login", nullable = false)
     private String login;
     @Column(name = "password", nullable = false)
     private String password;
+    @Column(name = "roles")
+    private String[] roles;
 
-    public User(String login, String password) {
+    public User(String login, String password, String... roles) {
         this.login = login;
         this.password = new BCryptPasswordEncoder().encode(password);
+        this.roles = roles;
     }
 
     public User() {
@@ -40,6 +43,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String[] getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String[] roles) {
+        this.roles = roles;
     }
 
 }

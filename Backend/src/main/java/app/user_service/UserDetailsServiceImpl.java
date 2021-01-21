@@ -2,6 +2,7 @@ package app.user_service;
 
 import app.model.User;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
@@ -23,12 +24,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException{
         User user = service.getUser(name);
         if(user==null) throw new UsernameNotFoundException("Login not found");
-        Set<GrantedAuthority> roles = new HashSet<>();
-        roles.add(new SimpleGrantedAuthority("USER"));
+        //Set<GrantedAuthority> roles = new HashSet<>();
+        //roles.add(new SimpleGrantedAuthority("USER"));
         UserDetails userDetails =
                 new org.springframework.security.core.userdetails.User(user.getLogin(),
                         user.getPassword(),
-                        roles);
+                        AuthorityUtils.createAuthorityList(user.getRoles()));
         return userDetails;
 
     }
