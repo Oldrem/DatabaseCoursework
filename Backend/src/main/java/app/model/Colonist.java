@@ -27,6 +27,25 @@ public class Colonist {
         this.userLogin = userLogin;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Colonist colonist = (Colonist) o;
+        return colonistId.equals(colonist.colonistId) &&
+                Objects.equals(firstName, colonist.firstName) &&
+                Objects.equals(lastName, colonist.lastName) &&
+                Objects.equals(nickname, colonist.nickname) &&
+                Objects.equals(birthDate, colonist.birthDate) &&
+                Objects.equals(colonyJoinDate, colonist.colonyJoinDate) &&
+                userLogin.equals(colonist.userLogin);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(colonistId, firstName, lastName, nickname, birthDate, colonyJoinDate, userLogin);
+    }
+
     public Long getColonistId() {
         return colonistId;
     }

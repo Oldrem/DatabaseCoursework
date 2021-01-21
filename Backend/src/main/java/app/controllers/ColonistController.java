@@ -40,9 +40,18 @@ public class ColonistController {
     }
 
     @PutMapping("/colonist/{id}")
-    ResponseEntity<Colonist> updateColonist(@Valid @RequestBody Colonist colonist) {
-        Colonist result = colonistRepository.save(colonist);
-        return ResponseEntity.ok().body(result);
+    Colonist replaceColonist(@RequestBody Colonist newColonist, @PathVariable Long id) {
+        return colonistRepository.findById(id)
+                .map(employee -> {
+                    employee.setFirstName(newColonist.getFirstName());
+                    employee.setLastName(newColonist.getLastName());
+                    employee.setNickname(newColonist.getNickname());
+                    return colonistRepository.save(employee);
+                })
+                .orElseGet(() -> {
+                    newColonist.setColonistId(id);
+                    return colonistRepository.save(newColonist);
+                });
     }
 
     @DeleteMapping("/colonist/{id}")

@@ -1,5 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
+import {Button, FormGroup} from "reactstrap";
+import {Link} from "react-router-dom";
 
 class HomePage extends React.Component{
     constructor(props){
@@ -10,11 +12,10 @@ class HomePage extends React.Component{
         fetch('user/' + this.props.user)
             .then(response => response.json())
             .then(data => this.setState({role: data}))
-            .catch(err => {console.error('Error:', err)});;
-        fetch('api/colonist/3452')
-            .then(response => response.json())
-            .then(data => this.setState({colonistData: data, isLoading: false}))
             .catch(err => {console.error('Error:', err)});
+        fetch('api/colonist/' + this.props.user)
+            .then(response => response.json())
+            .then(data => this.setState({colonistData: data, isLoading: false}));
 
     }
 
@@ -31,6 +32,7 @@ class HomePage extends React.Component{
                 <p className="login-name">Прозвище: {this.state.colonistData.nickname}</p>
                 <p className="login-name">Дата рождения: {this.state.colonistData.birthDate}</p>
                 <p className="login-name">Дата присоединения: {this.state.colonistData.colonyJoinDate}</p>
+                <Button className="submit-button-main" tag={Link} to="/edit">Редактировать</Button>
                 <button className="submit-button-main" onClick={this.exit}>Выйти</button><br/>
             </div>
             </div>
