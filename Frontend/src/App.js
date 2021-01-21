@@ -11,7 +11,8 @@ import AnimalsPageContainer from './Containers/AnimalsPageContainer';
 import RoomsPageContainer from './Containers/RoomsPageContainer';
 import OccupationsPageContainer from './Containers/OccupationsPageContainer';
 import ColoniesPageContainer from './Containers/ColoniesPageContainer';
-import HomeEditContainer from './Containers/HomeEditContainer';
+import HomeEditContainer from "./Containers/HomeEditContainer";
+
 
 class App extends React.Component{
 
@@ -38,6 +39,11 @@ class App extends React.Component{
                     <NavigationBarContainer/>
                     <Switch>
                         <Route exact path="/colonists" component={ColonistsContainer}/>
+                        <Route exact path="/animals" component={AnimalsPageContainer}/>
+                        <Route exact path="/rooms" component={RoomsPageContainer}/>
+                        <Route exact path="/occupations" component={OccupationsPageContainer}/>
+                        <Route exact path="/colonies" component={ColoniesPageContainer}/>
+                        <Route exact path="/edit" component={HomeEditContainer}/>
                         <Route exact path="/" component={HomeContainer}/>
                     </Switch>
                     <Footer/>
