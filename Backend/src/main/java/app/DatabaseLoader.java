@@ -1,5 +1,6 @@
 package app;
 
+import app.model.Colonist;
 import app.model.User;
 import app.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
