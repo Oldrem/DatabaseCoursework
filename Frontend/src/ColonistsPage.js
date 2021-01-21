@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
-import NavigationBar from './NavigationBar';
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
@@ -74,6 +73,7 @@ class Colonists extends Component {
                             <th width="15%">Nickname</th>
                             <th width="15%">Birth Date</th>
                             <th width="15%">Colony Join Date</th>
+                            <th width="10%">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
