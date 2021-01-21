@@ -7,6 +7,7 @@ import HomeContainer from "./Containers/HomeContainer";
 import RegisterContainer from "./Containers/RegisterContainer";
 import ColonistsContainer from "./Containers/ColonistsContainer";
 import NavigationBarContainer from './Containers/NavigationBarContainer';
+import AnimalsPageContainer from './Containers/AnimalsPageContainer';
 
 
 class App extends React.Component{
@@ -34,6 +35,7 @@ class App extends React.Component{
                     <NavigationBarContainer/>
                     <Switch>
                         <Route exact path="/colonists" component={ColonistsContainer}/>
+                        <Route exact path="/animals" component={AnimalsPageContainer}/>
                         <Route exact path="/" component={HomeContainer}/>
                     </Switch>
                     <Footer/>
