@@ -1,49 +1,64 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Button, FormGroup} from "reactstrap";
+import {Button, ButtonGroup, FormGroup} from "reactstrap";
 import {Link} from "react-router-dom";
 
-class HomePage extends React.Component{
+class WorkPage extends React.Component{
     constructor(props){
         super(props);
-        this.state = {role: [], colonistData: {}, isLoading: true};
+        this.state = {occupations: [], isLoading: true};
     }
     componentDidMount() {
-        fetch('user/' + this.props.user)
+        /*fetch('user/' + this.props.user)
             .then(response => response.json())
             .then(data => this.setState({role: data}))
-            .catch(err => {console.error('Error:', err)});
-        fetch('api/colonist/' + this.props.user)
+            .catch(err => {console.error('Error:', err)});*/
+        fetch('api/colonistlogin/' + this.props.user + '/occupations')
             .then(response => response.json())
-            .then(data => this.setState({colonistData: data, isLoading: false}))
+            .then(data => this.setState({occupations: data, isLoading: false}))
             .catch(err => {console.error('Error:', err)});
 
     }
 
     render() {
-        JSON.stringify(this.state.colonistData)
+        const {occupations, isLoading} = this.state;
+
+        if (isLoading) {
+            return(
+                <div>
+                    <p>Loading...</p>
+                </div>
+            ) ;
+        }
+
+        const occupationList = occupations.map(occupation => {
+            if (occupation.timeStarts === "null") {
+                return <div key={occupation.occupationId}>
+                    <p>Работа: {occupation.name}</p>
+                    <p>Время начала: {occupation.timeStarts}</p>
+                    <p>Время окончания: {occupation.timeEnds}</p>
+                    <p>Описание: {occupation.description}</p>
+                    <p><Link to={'/report/' + occupation.occupationId}><Button >Отправить отчетность.</Button></Link></p>
+                </div>
+            }
+            else {
+                return <div key={occupation.occupationId}>
+                    <p>Работа: {occupation.name}</p>
+                    <p>Время: Конкретное расписание отсутствует</p>
+                    <p>Описание: {occupation.description}</p>
+                    <p><Link to={'/report/' + occupation.occupationId}><Button >Отправить отчетность.</Button></Link></p>
+                </div>
+            }
+            });
         return(
             <div className="main-wrapper">
                 <div className="Wrapper2">
                     <div className="main">
-                        <p className="login-name">Вы вошли как {this.props.user}</p>
-                        <p className="login-name">Роль: {this.state.role}</p> <br/>
-                        <p className="login-name">Имя: {this.state.colonistData.firstName}</p>
-                        <p className="login-name">Фамилия: {this.state.colonistData.lastName}</p>
-                        <p className="login-name">Прозвище: {this.state.colonistData.nickname}</p>
-                        <p className="login-name">Дата рождения: {this.state.colonistData.birthDate}</p>
-                        <p className="login-name">Дата присоединения: {this.state.colonistData.colonyJoinDate}</p>
-                        <Button className="submit-button-main" tag={Link} to="/edit">Редактировать</Button>
-                        <button className="submit-button-main" onClick={this.exit}>Выйти</button><br/>
+                        {occupationList}
                     </div>
                 </div>
             </div>
         )
-    }
-
-
-    exit = ()=>{
-        this.props.dispatch({type: "APP_LOGOUT", value: {history: this.props.history}});
     }
 }
 
@@ -53,4 +68,4 @@ const mapStateToProps = function(store) {
     }
 };
 
-export default connect(mapStateToProps)(HomePage);
+export default connect(mapStateToProps)(WorkPage);
