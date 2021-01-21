@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Container } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 class NavigationBar extends Component {
     render() {
         return (
-            <div>
-                <Container fluid>
-                    <Button color="link"><Link to="/">Homepage</Link></Button>
-                    <Button color="link"><Link to="/colonists">Colonists</Link></Button>
-                    <Button color="link"><Link to="/animals">Animals</Link></Button>
-                    <Button color="link"><Link to="/rooms">Rooms</Link></Button>
-                    <Button color="link"><Link to="/occupations">Occupations</Link></Button>
-                    <Button color="link"><Link to="/resources">Our resources</Link></Button>
-                    <Button color="link"><Link to="/colonies">Other colonies</Link></Button>
-                </Container>
+            <div className="NavigationBar">
+                    <Link to="/"><Button>Homepage</Button></Link>
+                    <Link to="/colonists"><Button>Colonists</Button></Link>
+                    <Link to="/animals"><Button>Animals</Button></Link>
+                    <Link to="/rooms"><Button>Rooms</Button></Link>
+                    <Link to="/occupations"><Button>Occupations</Button></Link>
+                    <Link to="/resources"><Button>Our resources</Button></Link>
+                    <Link to="/colonies"><Button>Other colonies</Button></Link>
             </div>
         );
     }

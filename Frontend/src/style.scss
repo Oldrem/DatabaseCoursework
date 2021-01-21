@@ -2,16 +2,51 @@
 body{
   margin: 0;
   padding: 0;
-  background: #000000;
+  background-color: #000000;
   background-image: url(./images/BGPlanet2.jpg); 
   background-repeat: no-repeat;
 	background-position: top center;
 }
 
+button{
+  background-color: #6A522E;
+  border-style: solid;
+  border-color: #7D6034 #7D6034 #4D3D23 #4D3D23;
+  color: #E4E0D4;
+}
 
-.App{
-  margin-left: 150px;
-  margin-right: 150px;
+.NavigationBar{
+  background-color: #798593;
+  height: 35px;
+  padding: 1px;
+  width: 100%;
+  display: table;
+  table-layout: fixed
+}
+
+.NavigationBar a{
+  height: 100%;
+  display: table-cell;
+  border-style: solid;
+  border-width: 0 1px 0 1px;
+  border-color: #798593;
+}
+
+.NavigationBar button{
+  position: relative;
+  top: -3px;
+  height: 100%;
+  width: 100%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #5D6A72 #5D6A72 #142628 #142628;
+  background-image: url(./images/button1.png); 
+  color: #E2E3E5;
+}
+
+.Page{
+  margin-left: 300px;
+  margin-right: 300px;
 }
 
 
