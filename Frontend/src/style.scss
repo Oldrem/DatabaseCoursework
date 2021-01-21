@@ -1,7 +1,19 @@
 
 body{
-  background: #d7d7d7;
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  background-image: url(./images/BGPlanet2.jpg); 
+  background-repeat: no-repeat;
+	background-position: top center;
 }
+
+
+.App{
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
 
 /* .main{
   width: 900px;
@@ -58,14 +70,6 @@ h2 {
 * {
   box-sizing: border-box;
   margin: 0;
-}
-body{
-  margin: 0;
-  margin-left: 150px;
-  margin-right: 150px;
-  padding: 0;
-  height: 100%;
-  background: #d7d7d7;
 }
 div{
   font-size: 25px;

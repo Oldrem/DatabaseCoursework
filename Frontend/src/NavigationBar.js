@@ -7,11 +7,12 @@ class NavigationBar extends Component {
         return (
             <div>
                 <Container fluid>
-                    <Button color="link"><Link to="/">Home</Link></Button>
+                    <Button color="link"><Link to="/">Homepage</Link></Button>
                     <Button color="link"><Link to="/colonists">Colonists</Link></Button>
                     <Button color="link"><Link to="/animals">Animals</Link></Button>
                     <Button color="link"><Link to="/rooms">Rooms</Link></Button>
                     <Button color="link"><Link to="/occupations">Occupations</Link></Button>
+                    <Button color="link"><Link to="/resources">Our resources</Link></Button>
                     <Button color="link"><Link to="/colonies">Other colonies</Link></Button>
                 </Container>
             </div>
