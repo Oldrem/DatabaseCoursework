@@ -29,16 +29,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/", "/register","/static/**", "/login").permitAll()
-                .anyRequest().authenticated()
-                .and()
                 .formLogin()
-                .loginPage("/index.html").permitAll()
                 .loginProcessingUrl("/login").successForwardUrl("/ok").failureForwardUrl("/err")
                 .and()
-                .logout()
-                .permitAll().invalidateHttpSession(true);
+                .logout();
     }
 
     @Autowired

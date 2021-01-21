@@ -13,6 +13,7 @@ import OccupationsPageContainer from './Containers/OccupationsPageContainer';
 import ColoniesPageContainer from './Containers/ColoniesPageContainer';
 import HomeEditContainer from "./Containers/HomeEditContainer";
 import ResourcesPage from './ResourcesPage';
+import WorkPageContainer from "./Containers/WorkPageContainer";
 
 
 class App extends React.Component{
@@ -45,6 +46,7 @@ class App extends React.Component{
                             <Route exact path="/occupations" component={OccupationsPageContainer}/>
                             <Route exact path="/colonies" component={ColoniesPageContainer}/>
                             <Route exact path="/resources" component={ResourcesPage}/>
+                            <Route exact path="/work" component={WorkPageContainer}/>
                             <Route exact path="/edit" component={HomeEditContainer}/>
                             <Route exact path="/" component={HomeContainer}/>
                         </Switch>

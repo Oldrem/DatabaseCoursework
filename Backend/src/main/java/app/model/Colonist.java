@@ -16,6 +16,18 @@ public class Colonist {
     private String colonyJoinDate;
     private String userLogin;
 
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "colonist_occupation",
+            joinColumns = { @JoinColumn(name = "colonist_id") },
+            inverseJoinColumns = { @JoinColumn(name = "occupation_id") })
+    @JsonIgnoreProperties("colonists")
+    private Set<Occupation> occupations = new HashSet<>();
+
     private Colonist() {}
 
     public Colonist(String firstName, String lastName, String nickname, String birthDate, String colonyJoinDate, String userLogin) {
@@ -100,6 +112,14 @@ public class Colonist {
 
     public void setUserLogin(String userLogin) {
         this.userLogin = userLogin;
+    }
+
+    public Set<Occupation> getOccupations() {
+        return occupations;
+    }
+
+    public void setOccupations(Set<Occupation> occupations) {
+        this.occupations = occupations;
     }
 }
 

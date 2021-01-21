@@ -1,8 +1,8 @@
 package app.controllers;
 
 import app.model.Colonist;
+import app.model.Occupation;
 import app.repositories.ColonistRepository;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +10,6 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Collection;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -26,11 +25,29 @@ public class ColonistController {
         return (Collection<Colonist>) colonistRepository.findAll();
     }
 
+    @GetMapping("/colonist/{id}/occupations")
+    Collection<Occupation> getColonistOccupations(@PathVariable Long id) {
+        return colonistRepository.findByColonistId(id).getOccupations();
+        //return colonistRepository.findById(id)
+        //        .map(colonist -> (Collection<Occupation>) colonist.getOccupations())
+        //        .orElseGet(new ArrayList<Occupation>());
+    }
+
+    @GetMapping("/colonistlogin/{login}/occupations")
+    Collection<Occupation> getColonistOccupations(@PathVariable String login) {
+        return colonistRepository.findByUserLogin(login).getOccupations();
+        //return colonistRepository.findById(id)
+        //        .map(colonist -> (Collection<Occupation>) colonist.getOccupations())
+        //        .orElseGet(new ArrayList<Occupation>());
+    }
+
     @GetMapping("/colonist/{login}")
     ResponseEntity<?> getColonist(@PathVariable String login) {
         Colonist colonist = colonistRepository.findByUserLogin(login);
         return ResponseEntity.ok().body(colonist);
     }
+
+
 
     @PostMapping("/colonist")
     ResponseEntity<Colonist> createColonist(@Valid @RequestBody Colonist colonist) throws URISyntaxException {

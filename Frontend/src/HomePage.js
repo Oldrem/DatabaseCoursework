@@ -15,7 +15,8 @@ class HomePage extends React.Component{
             .catch(err => {console.error('Error:', err)});
         fetch('api/colonist/' + this.props.user)
             .then(response => response.json())
-            .then(data => this.setState({colonistData: data, isLoading: false}));
+            .then(data => this.setState({colonistData: data, isLoading: false}))
+            .catch(err => {console.error('Error:', err)});
 
     }
 

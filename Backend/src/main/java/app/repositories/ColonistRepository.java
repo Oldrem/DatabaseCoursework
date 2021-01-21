@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface ColonistRepository extends CrudRepository<Colonist, Long> {
     Colonist findByUserLogin(String login);
+    Colonist findByColonistId(Long id);
 }

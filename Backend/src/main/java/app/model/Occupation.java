@@ -1,8 +1,11 @@
 package app.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Occupation {
@@ -11,6 +14,15 @@ public class Occupation {
     private String description;
     private String timeStarts;
     private String timeEnds;
+
+    @JsonIgnoreProperties("occupations")
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            mappedBy = "occupations")
+    private Set<Colonist> colonists = new HashSet<>();
 
     public Occupation() {}
 
@@ -59,5 +71,13 @@ public class Occupation {
 
     public void setTimeEnds(String timeEnds) {
         this.timeEnds = timeEnds;
+    }
+
+    public Set<Colonist> getColonists() {
+        return colonists;
+    }
+
+    public void setColonists(Set<Colonist> colonists) {
+        this.colonists = colonists;
     }
 }
