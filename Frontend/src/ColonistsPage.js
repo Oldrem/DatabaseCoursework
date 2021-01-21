@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
-import NavigationBar from './NavigationBar';
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 

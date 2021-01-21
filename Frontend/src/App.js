@@ -10,6 +10,7 @@ import NavigationBarContainer from './Containers/NavigationBarContainer';
 import AnimalsPageContainer from './Containers/AnimalsPageContainer';
 import RoomsPageContainer from './Containers/RoomsPageContainer';
 import OccupationsPageContainer from './Containers/OccupationsPageContainer';
+import ColoniesPageContainer from './Containers/ColoniesPageContainer';
 
 
 class App extends React.Component{
@@ -40,6 +41,7 @@ class App extends React.Component{
                         <Route exact path="/animals" component={AnimalsPageContainer}/>
                         <Route exact path="/rooms" component={RoomsPageContainer}/>
                         <Route exact path="/occupations" component={OccupationsPageContainer}/>
+                        <Route exact path="/colonies" component={ColoniesPageContainer}/>
                         <Route exact path="/" component={HomeContainer}/>
                     </Switch>
                     <Footer/>
