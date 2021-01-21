@@ -5,7 +5,6 @@ import NavigationBar from "./NavigationBar";
 class HomePage extends React.Component{
     constructor(props){
         super(props);
-        if(this.props.user==="null") this.props.history.push("/login");
         this.state = {role: []};
     }
     componentDidMount() {

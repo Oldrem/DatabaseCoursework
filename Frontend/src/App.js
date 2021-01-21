@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from "react-redux";
 import { Switch, Route} from "react-router-dom";
 import "./style.scss"
 import LoginContainer from "./Containers/LoginContainer";
@@ -8,19 +9,34 @@ import ColonistsContainer from "./Containers/ColonistsContainer";
 
 
 class App extends React.Component{
+
     render() {
-        return (
-            <div className="App">
-                <Header/>
-                <Switch>
-                    <Route exact path="/login" component={LoginContainer}/>
-                    <Route exact path="/register" component={RegisterContainer}/>
-                    <Route exact path="/colonists" component={ColonistsContainer}/>
-                    <Route exact path="/" component={HomeContainer}/>
-                </Switch>
-                <Footer/>
-            </div>
-        );
+        console.log("User:" + this.props.user);
+        let isLoggedIn = !(this.props.user==="null" || this.props.user===null);
+        console.log("Is logged in:" + isLoggedIn);
+
+        if (!isLoggedIn)
+            return (
+                <div className="App">
+                    <Header/>
+                    <Switch>
+                        <Route exact path="/register" component={RegisterContainer}/>
+                        <Route component={LoginContainer}/>
+                    </Switch>
+                    <Footer/>
+                </div>
+            );
+        else
+            return (
+                <div className="App">
+                    <Header/>
+                    <Switch>
+                        <Route exact path="/colonists" component={ColonistsContainer}/>
+                        <Route exact path="/" component={HomeContainer}/>
+                    </Switch>
+                    <Footer/>
+                </div>
+            );
     }
 }
 
@@ -36,4 +52,11 @@ const Footer = ()=>{
 };
 
 
-export default App;
+
+const mapStateToProps = function(store) {
+    return {
+        user: store.appState.user,
+    }
+};
+
+export default connect(mapStateToProps)(App);

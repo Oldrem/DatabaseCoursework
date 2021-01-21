@@ -8,9 +8,6 @@ class Colonists extends Component {
 
     constructor(props) {
         super(props);
-        if(this.props.user==="null" || this.props.user===null) {
-            this.props.history.push("/login");
-        }
         this.state = {colonists: [], isLoading: true};
         this.remove = this.remove.bind(this);
     }
@@ -90,10 +87,5 @@ class Colonists extends Component {
     }
 }
 
-const mapStateToProps = function(store) {
-    return {
-        user: store.appState.user,
-    }
-};
 
-export default connect(mapStateToProps)(Colonists);
+export default Colonists;
