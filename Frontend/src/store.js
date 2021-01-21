@@ -1,13 +1,25 @@
 import { createStore} from 'redux';
 import reducers from './reducers';
-import middleware from "./middlewares";
+import middleware from "./middlewares/middlewares";
 
 
 const initialState = {
     appState:{
-        user: window.localStorage.getItem("user"),
-        points: [],
-        drawing: []
+        user: window.localStorage.getItem("user")
+    },
+    loginState:{
+        login: "",
+        password: "",
+        error: false,
+        formCorrect: false
+    },
+    registerState: {
+        login: "",
+        password: "",
+        rPassword: "",
+        loginError: false,
+        passwordError: false,
+        formCorrect: false
     }
 };
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from "react-redux";
 import NavigationBar from './NavigationBar';
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -7,13 +8,15 @@ class Colonists extends Component {
 
     constructor(props) {
         super(props);
+        if(this.props.user==="null" || this.props.user===null) {
+            this.props.history.push("/login");
+        }
         this.state = {colonists: [], isLoading: true};
         this.remove = this.remove.bind(this);
     }
 
     componentDidMount() {
         this.setState({isLoading: true});
-
         fetch('api/colonists')
             .then(response => response.json())
             .then(data => this.setState({colonists: data, isLoading: false}));
@@ -27,7 +30,7 @@ class Colonists extends Component {
                 'Content-Type': 'application/json'
             }
         }).then(() => {
-            let updatedColonists = [...this.state.colonists].filter(i => i.id !== id);
+            let updatedColonists = [...this.state.colonists].filter(i => i.colonistId !== id);
             this.setState({colonists: updatedColonists});
         });
     }
@@ -44,7 +47,7 @@ class Colonists extends Component {
         }
 
         const colonistList = colonists.map(colonist => {
-            return <tr key={colonist.id}>
+            return <tr key={colonist.colonistId}>
                 <td style={{whiteSpace: 'nowrap'}}>{colonist.firstName}</td>
                 <td style={{whiteSpace: 'nowrap'}}>{colonist.lastName}</td>
                 <td style={{whiteSpace: 'nowrap'}}>{colonist.nickname}</td>
@@ -62,6 +65,7 @@ class Colonists extends Component {
         return (
             <div>
                 <Container fluid>
+                    <NavigationBar/>
                     <div className="float-right">
                         <Button color="success" tag={Link} to="/colonists/new">Add Colonist?</Button>
                     </div>
@@ -86,4 +90,10 @@ class Colonists extends Component {
     }
 }
 
-export default Colonists;
+const mapStateToProps = function(store) {
+    return {
+        user: store.appState.user,
+    }
+};
+
+export default connect(mapStateToProps)(Colonists);

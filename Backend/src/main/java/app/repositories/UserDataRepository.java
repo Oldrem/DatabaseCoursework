@@ -1,13 +1,11 @@
 package app.repositories;
 
 import app.model.UserData;
-import org.springframework.data.repository.Repository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@RepositoryRestResource(exported = false)
-public interface UserDataRepository extends Repository<UserData, Long> {
+public interface UserDataRepository extends JpaRepository<UserData, Long> {
 
-    UserData save(UserData manager);
+    //UserData save(UserData userData);
 
     UserData findByLogin(String login);
 }

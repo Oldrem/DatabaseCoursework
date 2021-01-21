@@ -1,23 +1,39 @@
-import React, { Component } from 'react';
-import HomePage from './HomePage';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Colonists from './ColonistsPage';
-import NavigationBar from './NavigationBar';
+import React from 'react';
+import { Switch, Route} from "react-router-dom";
+import "./style.scss"
+import LoginContainer from "./Containers/LoginContainer";
+import HomeContainer from "./Containers/HomeContainer";
+import RegisterContainer from "./Containers/RegisterContainer";
+import ColonistsContainer from "./Containers/ColonistsContainer";
 
-class App extends Component {
+
+class App extends React.Component{
     render() {
         return (
-            <div>                
-                <Router>
-                    <NavigationBar/>
-                    <Switch>
-                        <Route path='/' exact={true} component={HomePage}/>
-                        <Route path='/colonists' exact={true} component={Colonists}/>
-                    </Switch>
-                </Router>
+            <div className="App">
+                <Header/>
+                <Switch>
+                    <Route exact path="/login" component={LoginContainer}/>
+                    <Route exact path="/register" component={RegisterContainer}/>
+                    <Route exact path="/colonists" component={ColonistsContainer}/>
+                    <Route exact path="/" component={HomeContainer}/>
+                </Switch>
+                <Footer/>
             </div>
-        )
+        );
     }
 }
+
+
+const Header = ()=>{
+    return(<div className="header">ИСБД, Курсовая работа.
+        <span className="variant"> Щербаков В.Ю., Осипов О., P33122.</span>
+    </div>)
+};
+
+const Footer = ()=>{
+    return(<div className="footer">Copyright &copy;ItmoLabs all rights were broken</div>)
+};
+
 
 export default App;
