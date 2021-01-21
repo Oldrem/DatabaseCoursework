@@ -74,6 +74,7 @@ class Colonists extends Component {
                             <th width="15%">Nickname</th>
                             <th width="15%">Birth Date</th>
                             <th width="15%">Colony Join Date</th>
+                            <th width="10%">Actions</th>
                         </tr>
                         </thead>
                         <tbody>

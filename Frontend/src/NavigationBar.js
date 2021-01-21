@@ -10,6 +10,7 @@ class NavigationBar extends Component {
                     <Button color="link"><Link to="/">Home</Link></Button>
                     <Button color="link"><Link to="/colonists">Colonists</Link></Button>
                     <Button color="link"><Link to="/animals">Animals</Link></Button>
+                    <Button color="link"><Link to="/rooms">Rooms</Link></Button>
                 </Container>
             </div>
         );

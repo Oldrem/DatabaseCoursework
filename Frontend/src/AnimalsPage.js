@@ -48,7 +48,7 @@ class AnimalsPage extends Component {
                 <td style={{whiteSpace: 'nowrap'}}>{animal.name}</td>
                 <td style={{whiteSpace: 'nowrap'}}>{animal.animalTypeId}</td>
                 <td style={{whiteSpace: 'nowrap'}}>{animal.responsibleColonistId}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{animal.trainingProgress}</td>
+                <td style={{whiteSpace: 'nowrap'}}>{animal.trainingProgress}%</td>
                 <td style={{whiteSpace: 'nowrap'}}>{animal.lastResourceCollection}</td>
                 <td>
                     <ButtonGroup>
@@ -63,7 +63,7 @@ class AnimalsPage extends Component {
             <div>
                 <Container fluid>
                     <div className="float-right">
-                        <Button color="success" tag={Link} to="/colonists/new">Add Colonist?</Button>
+                        <Button color="success" tag={Link} to="/colonists/new">Add an animal?</Button>
                     </div>
                     <h3>All the good boys and girls:</h3>
                     <Table className="mt-4">
@@ -74,6 +74,7 @@ class AnimalsPage extends Component {
                             <th width="15%">(TEMP) Responsible</th>
                             <th width="15%">Training progress</th>
                             <th width="15%">Last resource collection</th>
+                            <th width="10%">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
