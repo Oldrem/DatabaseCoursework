@@ -62,7 +62,6 @@ class Colonists extends Component {
         return (
             <div>
                 <Container fluid>
-                    <NavigationBar/>
                     <div className="float-right">
                         <Button color="success" tag={Link} to="/colonists/new">Add Colonist?</Button>
                     </div>

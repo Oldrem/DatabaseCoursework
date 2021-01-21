@@ -1,6 +1,5 @@
 import React from "react";
 import {connect} from "react-redux";
-import NavigationBar from "./NavigationBar";
 
 class HomePage extends React.Component{
     constructor(props){
@@ -16,7 +15,6 @@ class HomePage extends React.Component{
     render() {
         return(
         <div className="main-wrapper">
-            <NavigationBar/>
             <div className="Wrapper2">
             <div className="main">
                 <p className="login-name">Вы вошли как {this.props.user}</p>
