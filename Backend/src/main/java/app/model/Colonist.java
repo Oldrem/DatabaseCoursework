@@ -14,15 +14,17 @@ public class Colonist {
     private String nickname;
     private String birthDate;
     private String colonyJoinDate;
+    private String userLogin;
 
     private Colonist() {}
 
-    public Colonist(String firstName, String lastName, String nickname, String birthDate, String colonyJoinDate) {
+    public Colonist(String firstName, String lastName, String nickname, String birthDate, String colonyJoinDate, String userLogin) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.nickname = nickname;
         this.birthDate = birthDate;
         this.colonyJoinDate = colonyJoinDate;
+        this.userLogin = userLogin;
     }
 
     public Long getColonistId() {
@@ -71,6 +73,14 @@ public class Colonist {
 
     public void setColonyJoinDate(String colonyJoinDate) {
         this.colonyJoinDate = colonyJoinDate;
+    }
+
+    public String getUserLogin() {
+        return userLogin;
+    }
+
+    public void setUserLogin(String userLogin) {
+        this.userLogin = userLogin;
     }
 }
 

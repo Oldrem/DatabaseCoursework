@@ -26,11 +26,10 @@ public class ColonistController {
         return (Collection<Colonist>) colonistRepository.findAll();
     }
 
-    @GetMapping("/colonist/{id}")
-    ResponseEntity<?> getColonist(@PathVariable Long id) {
-        Optional<Colonist> colonist = colonistRepository.findById(id);
-        return colonist.map(response -> ResponseEntity.ok().body(response))
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    @GetMapping("/colonist/{login}")
+    ResponseEntity<?> getColonist(@PathVariable String login) {
+        Colonist colonist = colonistRepository.findByUserLogin(login);
+        return ResponseEntity.ok().body(colonist);
     }
 
     @PostMapping("/colonist")
