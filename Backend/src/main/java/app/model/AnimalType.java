@@ -10,12 +10,12 @@ import javax.persistence.Table;
 public class AnimalType {
     private @Id @GeneratedValue Long animalTypeId;
     private String name;
-    private boolean canBeTrained;
-    private long resourceId;
+    private Boolean canBeTrained;
+    private Long resourceId;
 
     private AnimalType() {}
 
-    public AnimalType(String name, boolean canBeTrained, long resourceId) {
+    public AnimalType(String name, Boolean canBeTrained, Long resourceId) {
         this.name = name;
         this.canBeTrained = canBeTrained;
         this.resourceId = resourceId;
@@ -37,19 +37,19 @@ public class AnimalType {
         this.name = name;
     }
 
-    public boolean isCanBeTrained() {
+    public Boolean isCanBeTrained() {
         return canBeTrained;
     }
 
-    public void setCanBeTrained(boolean canBeTrained) {
+    public void setCanBeTrained(Boolean canBeTrained) {
         this.canBeTrained = canBeTrained;
     }
 
-    public long getResourceId() {
+    public Long getResourceId() {
         return resourceId;
     }
 
-    public void setResourceId(long resourceId) {
+    public void setResourceId(Long resourceId) {
         this.resourceId = resourceId;
     }
 }

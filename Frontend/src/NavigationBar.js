@@ -10,8 +10,8 @@ class NavigationBar extends Component {
         let navigationButtons = 
         [
             {link: "/", name: "Homepage", roleVisibility: ["USER"]},
-            {link: "/work", name: "My work", roleVisibility: ["MANAGER"]},
-            {link: "/review", name: "Review reports", roleVisibility: ["USER"]},
+            {link: "/work", name: "My work", roleVisibility: ["USER"]},
+            {link: "/review", name: "Review reports", roleVisibility: ["MANAGER"]},
             {link: "/colonists", name: "Colonists", roleVisibility: ["USER"]},
             {link: "/animals", name: "Animals", roleVisibility: ["USER"]},
             {link: "/rooms", name: "Rooms", roleVisibility: ["USER"]},

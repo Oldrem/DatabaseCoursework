@@ -6,30 +6,23 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="134dd3c4-4442-47ac-8a33-eac30983c7ab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="134dd3c4-4442-47ac-8a33-eac30983c7ab" name="Default Changelist" comment="Pushed whole directory">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/responses/AnimalResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/WebDevelopment4/WebDevelopment4.jar" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/WebDevelopment4/WebDevelopment4.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/ReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/Colonist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/Colonist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/repositories/OccupationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repositories/OccupationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/requests/UserAddRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/requests/UserAddRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/AnimalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/AnimalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/RoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/AnimalType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/AnimalType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/repositories/AnimalTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repositories/AnimalTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/repositories/RoomTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repositories/RoomTypeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/AppController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/ColonistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/ColonistController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/model/Colonist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/model/Colonist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/model/Occupation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/model/Occupation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/ColonistRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/ColonistRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/OccupationRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/OccupationRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/requests/UserAddRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/requests/UserAddRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/security/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/AnimalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/AnimalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/RoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/RoomController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/model/AnimalType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/model/AnimalType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/AnimalTypeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/AnimalTypeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/RoomTypeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/RoomTypeRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/HomePageEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/HomePageEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/ReportPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/ReportPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/WorkPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/WorkPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/NavigationBar.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +244,7 @@
       <workItem from="1611045974891" duration="5901000" />
       <workItem from="1611129080835" duration="12378000" />
       <workItem from="1611151313781" duration="7975000" />
-      <workItem from="1611187625239" duration="50391000" />
+      <workItem from="1611187625239" duration="54907000" />
     </task>
     <task id="LOCAL-00001" summary="REST API for Animals, changes in pom and properties">
       <created>1611052999769</created>
