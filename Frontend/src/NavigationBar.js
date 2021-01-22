@@ -10,7 +10,7 @@ class NavigationBar extends Component {
         let navigationButtons = 
         [
             {link: "/", name: "Homepage", roleVisibility: ["USER"]},
-            {link: "/work", name: "My work", roleVisibility: ["USER"]},
+            {link: "/work", name: "My work", roleVisibility: ["MANAGER"]},
             {link: "/review", name: "Review reports", roleVisibility: ["USER"]},
             {link: "/colonists", name: "Colonists", roleVisibility: ["USER"]},
             {link: "/animals", name: "Animals", roleVisibility: ["USER"]},
@@ -24,7 +24,7 @@ class NavigationBar extends Component {
 
     isUserOfRole(role)
     {
-        return true; //TODO check for role 
+        return role.includes("USER"); //TODO check for role 
     }
 
     render() {
@@ -33,7 +33,7 @@ class NavigationBar extends Component {
 
         const buttons = buttonsMetainfo.map( buttonInfo => {
             let selectedClass = window.location.pathname === buttonInfo.link ? "Selected" : "";
-            if (this.isUserOfRole(buttonInfo.role))
+            if (this.isUserOfRole(buttonInfo.roleVisibility))
                 return (
                     <Link to={buttonInfo.link}><Button className={selectedClass}>{buttonInfo.name}</Button></Link>
                 );

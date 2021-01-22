@@ -29,7 +29,7 @@ button{
   border-color: #7D6034 #7D6034 #4D3D23 #4D3D23;
   color: #E4E0D4;
   font-size: medium;
-  padding: 5px 15px 5px 15px;
+  padding: 3px 15px 3px 15px;
 }
 
 button:hover {
@@ -76,12 +76,9 @@ button:active {
   border-color: #214E64;
 }
 
-.NavigationBar .Selected{
+.NavigationBar .Selected, .NavigationBar .Selected:hover {
   background-image: url(./images/button1selected.png); 
-}
-
-.NavigationBar .Selected:hover {
-  background-image: url(./images/button1selected.png); 
+  border-color: #5E6E78;
 }
 
 .Page{
