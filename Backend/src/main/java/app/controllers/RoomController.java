@@ -1,7 +1,10 @@
 package app.controllers;
 
 import app.model.Room;
+import app.model.RoomType;
 import app.repositories.RoomRepository;
+import app.repositories.RoomTypeRepository;
+import app.responses.RoomResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,21 +12,31 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
 public class RoomController {
     private RoomRepository roomRepository;
+    private RoomTypeRepository roomTypeRepository;
 
-    public RoomController(RoomRepository roomRepository) {
+    public RoomController(RoomRepository roomRepository, RoomTypeRepository roomTypeRepository) {
         this.roomRepository = roomRepository;
+        this.roomTypeRepository = roomTypeRepository;
     }
 
     @GetMapping("/rooms")
-    Collection<Room> rooms() {
-        return (Collection<Room>) roomRepository.findAll();
+    Collection<RoomResponse> rooms() {
+        Collection<Room> rooms = (Collection<Room>) roomRepository.findAll();
+        List<RoomResponse> roomResponses = new ArrayList<>();
+        for(Room room : rooms) {
+            RoomType roomType = roomTypeRepository.findByRoomTypeId(room.getRoomTypeId());
+            roomResponses.add(new RoomResponse(room, roomType.getName()));
+        }
+        return roomResponses;
     }
 
     @GetMapping("/room/{id}")
