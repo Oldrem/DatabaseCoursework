@@ -25,14 +25,27 @@ body {
 button{
   background-color: #6A522E;
   border-style: solid;
+  border-width: 3px;
   border-color: #7D6034 #7D6034 #4D3D23 #4D3D23;
   color: #E4E0D4;
+  font-size: medium;
+  padding: 5px 15px 5px 15px;
+}
+
+button:hover {
+  background-color: #886432;
+  border-color: #967136 #967136 #664B25 #664B25;
+}
+
+button:active {
+  background-color: #624927;
+  border-color: #584223 #584223 #6D5636 #6D5636;
 }
 
 .NavigationBar{
   position: fixed;
   top: 0;
-  background-color: #84878C;
+  //background-color: #6F6F6F;
   height: 35px;
   padding-bottom: 1px;
   width: 100%;
@@ -43,9 +56,6 @@ button{
 .NavigationBar a{
   height: 100%;
   display: table-cell;
-  border-style: solid;
-  border-width: 0 1px 0 1px;
-  border-color: #84878C;
 }
 
 .NavigationBar button{
@@ -53,11 +63,25 @@ button{
   height: 100%;
   width: 100%;
   border-style: solid;
-  border-width: 3px;
-  border-color: #5D6A72 #5D6A72 #142628 #142628;
+  border-width: 1px 1px 2px 1px;
+  border-color: #6F6F6F;
   background-image: url(./images/button1.png); 
+  background-size: cover;
   color: #E2E3E5;
   font-family: Helvetica;
+}
+
+.NavigationBar button:hover {
+  background-image: url(./images/button1hover.png); 
+  border-color: #214E64;
+}
+
+.NavigationBar .Selected{
+  background-image: url(./images/button1selected.png); 
+}
+
+.NavigationBar .Selected:hover {
+  background-image: url(./images/button1selected.png); 
 }
 
 .Page{
@@ -70,6 +94,13 @@ button{
   border-width: 1px;
   border-color: #A1A4A9;
   color: #CFD0D4;
+}
+
+.LoginPage{
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .Footer{

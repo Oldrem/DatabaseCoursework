@@ -28,7 +28,7 @@ class App extends React.Component{
         if (!isLoggedIn)
             return (
                 <div className="App">                    
-                    <div className="Page">
+                    <div className="Page LoginPage">
                         <Header/>
                         <Switch>
                             <Route exact path="/register" component={RegisterContainer}/>

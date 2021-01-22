@@ -3,18 +3,45 @@ import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
 class NavigationBar extends Component {
+
+    constructor(props)
+    {
+        super(props)
+        let navigationButtons = 
+        [
+            {link: "/", name: "Homepage", roleVisibility: ["USER"]},
+            {link: "/work", name: "My work", roleVisibility: ["USER"]},
+            {link: "/review", name: "Review reports", roleVisibility: ["USER"]},
+            {link: "/colonists", name: "Colonists", roleVisibility: ["USER"]},
+            {link: "/animals", name: "Animals", roleVisibility: ["USER"]},
+            {link: "/rooms", name: "Rooms", roleVisibility: ["USER"]},
+            {link: "/occupations", name: "Occupations", roleVisibility: ["USER"]},
+            {link: "/resources", name: "Our resources", roleVisibility: ["USER"]},
+            {link: "/colonies", name: "Other colonies", roleVisibility: ["USER"]}
+        ];
+        this.state = {navigationButtons: navigationButtons};
+    }
+
+    isUserOfRole(role)
+    {
+        return true; //TODO check for role 
+    }
+
     render() {
+
+        const buttonsMetainfo = this.state.navigationButtons;
+
+        const buttons = buttonsMetainfo.map( buttonInfo => {
+            let selectedClass = window.location.pathname === buttonInfo.link ? "Selected" : "";
+            if (this.isUserOfRole(buttonInfo.role))
+                return (
+                    <Link to={buttonInfo.link}><Button className={selectedClass}>{buttonInfo.name}</Button></Link>
+                );
+        })
+
         return (
             <div className="NavigationBar">
-                    <Link to="/"><Button>Homepage</Button></Link>
-                    <Link to="/work"><Button>My work</Button></Link>
-                    <Link to="/review"><Button>Review reports</Button></Link>
-                    <Link to="/colonists"><Button>Colonists</Button></Link>
-                    <Link to="/animals"><Button>Animals</Button></Link>
-                    <Link to="/rooms"><Button>Rooms</Button></Link>
-                    <Link to="/occupations"><Button>Occupations</Button></Link>
-                    <Link to="/resources"><Button>Our resources</Button></Link>
-                    <Link to="/colonies"><Button>Other colonies</Button></Link>
+                    {buttons}
             </div>
         );
     }
