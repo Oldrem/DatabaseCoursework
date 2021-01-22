@@ -1,7 +1,14 @@
 package app.controllers;
 
+import app.model.Colony;
+import app.model.Resource;
+import app.model.Room;
 import app.model.Transaction;
+import app.repositories.ColonyRepository;
+import app.repositories.ResourceRepository;
+import app.repositories.RoomRepository;
 import app.repositories.TransactionRepository;
+import app.responses.TransactionResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,21 +16,49 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
 public class TransactionController {
     private TransactionRepository transactionRepository;
+    private ResourceRepository resourceRepository;
+    private RoomRepository roomRepository;
+    private ColonyRepository colonyRepository;
 
-    public TransactionController(TransactionRepository transactionRepository) {
+    public TransactionController(TransactionRepository transactionRepository, ResourceRepository resourceRepository, RoomRepository roomRepository, ColonyRepository colonyRepository) {
         this.transactionRepository = transactionRepository;
+        this.resourceRepository = resourceRepository;
+        this.roomRepository = roomRepository;
+        this.colonyRepository = colonyRepository;
     }
 
     @GetMapping("/transactions")
-    Collection<Transaction> transactions() {
-        return (Collection<Transaction>) transactionRepository.findAll();
+    Collection<TransactionResponse> transactions() {
+        Collection<Transaction> transactions = (Collection<Transaction>) transactionRepository.findAll();
+        Collection<Resource> resources = (Collection<Resource>) resourceRepository.findAll();
+        Collection<Room> rooms = (Collection<Room>) roomRepository.findAll();
+        Collection<Colony> colonies = (Collection<Colony>) colonyRepository.findAll();
+        List<TransactionResponse> transactionResponses = new ArrayList<>();
+        for(Transaction transaction : transactions) {
+            Room room = rooms.stream()
+                    .filter(rm -> transaction.getRoomId().equals(rm.getRoomId()))
+                    .findAny()
+                    .orElse(null);
+            Resource resource = resources.stream()
+                    .filter(rs -> transaction.getResourceId().equals(rs.getResourceId()))
+                    .findAny()
+                    .orElse(null);
+            Colony colony = colonies.stream()
+                    .filter(rs -> transaction.getColonyId().equals(rs.getColonyId()))
+                    .findAny()
+                    .orElse(null);
+            transactionResponses.add(new TransactionResponse(transaction, resource.getName(), room.getName(), colony.getName()));
+        }
+        return transactionResponses;
     }
 
     @GetMapping("/transaction/{id}")

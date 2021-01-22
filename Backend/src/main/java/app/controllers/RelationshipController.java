@@ -35,6 +35,11 @@ public class RelationshipController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @GetMapping("/relationship/{id}")
+    Collection<Relationship> getRelationshipsFromColonist(@PathVariable Long id) {
+        return relationshipRepository.findAllByRelationshipId_Colonist1Id(id);
+    }
+
     @PostMapping("/relationship")
     ResponseEntity<Relationship> createRelationship(@Valid @RequestBody Relationship relationship) throws URISyntaxException {
         Relationship result = relationshipRepository.save(relationship);
