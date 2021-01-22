@@ -7,22 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="134dd3c4-4442-47ac-8a33-eac30983c7ab" name="Default Changelist" comment="Pushed whole directory">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/responses/AnimalResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/WebDevelopment4/WebDevelopment4.jar" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/WebDevelopment4/WebDevelopment4.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/AnimalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/AnimalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/RoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/AnimalType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/AnimalType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/repositories/AnimalTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repositories/AnimalTypeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/repositories/RoomTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repositories/RoomTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/StoredResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/StoredResourceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/repositories/ResourceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repositories/ResourceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/repositories/RoomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repositories/RoomRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/AnimalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/AnimalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/RoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/RoomController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/model/AnimalType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/model/AnimalType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/AnimalTypeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/AnimalTypeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/RoomTypeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/RoomTypeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/StoredResourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/StoredResourceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/ResourceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/ResourceRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/RoomRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/RoomRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/NavigationBar.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +240,7 @@
       <workItem from="1611045974891" duration="5901000" />
       <workItem from="1611129080835" duration="12378000" />
       <workItem from="1611151313781" duration="7975000" />
-      <workItem from="1611187625239" duration="54907000" />
+      <workItem from="1611187625239" duration="59100000" />
     </task>
     <task id="LOCAL-00001" summary="REST API for Animals, changes in pom and properties">
       <created>1611052999769</created>
@@ -295,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611233648063</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added detailed responses for Animal and Room">
+      <created>1611330777791</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1611330777791</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +325,7 @@
     <MESSAGE value="Login/Registration, some UI, restricted access to colonists for unlogged" />
     <MESSAGE value="Added roles for users + REST to grab them" />
     <MESSAGE value="Pushed whole directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pushed whole directory" />
+    <MESSAGE value="Added detailed responses for Animal and Room" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added detailed responses for Animal and Room" />
   </component>
 </project>

@@ -34,12 +34,21 @@ public class AnimalController {
 
     @GetMapping("/animals")
     Collection<AnimalResponse> animals()  {
+
         Collection<Animal> animals = (Collection<Animal>) animalRepository.findAll();
+        Collection<AnimalType> animalTypes = (Collection<AnimalType>) animalTypeRepository.findAll();
+        Collection<Colonist> colonists = (Collection<Colonist>) colonistRepository.findAll();
         List<AnimalResponse> animalResponses = new ArrayList<>();
         for(Animal animal : animals) {
-            AnimalType animalType = animalTypeRepository.findByAnimalTypeId(animal.getAnimalTypeId());
-            Colonist colonist = colonistRepository.findByColonistId(animal.getResponsibleColonistId());
-            if (colonist != null) {
+            AnimalType animalType = animalTypes.stream()
+                    .filter(at -> animal.getAnimalTypeId().equals(at.getAnimalTypeId()))
+                    .findAny()
+                    .orElse(null);
+            if (animal.getResponsibleColonistId() != null) {
+                Colonist colonist = colonists.stream()
+                        .filter(c -> animal.getResponsibleColonistId().equals(c.getColonistId()))
+                        .findAny()
+                        .orElse(null);
                 animalResponses.add(new AnimalResponse(animal, animalType.getName(), colonist.getNickname()));
             }
             else {
