@@ -31,10 +31,16 @@ public class ReportController {
         return reportRepository.findAllByUserLogin(login);
     }
 
-    @GetMapping("/report/{login}")
-    ResponseEntity<?> getReport(@PathVariable String login) {
-        Report report = reportRepository.findByUserLogin(login);
-        return ResponseEntity.ok().body(report);
+    @GetMapping("/reports/unreviewed")
+    Collection<Report> getUnreviewedReports() {
+        return reportRepository.findAllByIsReviewed(false);
+    }
+
+    @GetMapping("/report/{id}")
+    ResponseEntity<?> getReport(@PathVariable Long id) {
+        Optional<Report> report = reportRepository.findById(id);
+        return report.map(response -> ResponseEntity.ok().body(response))
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
 

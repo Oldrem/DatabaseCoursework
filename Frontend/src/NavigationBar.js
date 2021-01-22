@@ -8,6 +8,7 @@ class NavigationBar extends Component {
             <div className="NavigationBar">
                     <Link to="/"><Button>Homepage</Button></Link>
                     <Link to="/work"><Button>My work</Button></Link>
+                    <Link to="/review"><Button>Review reports</Button></Link>
                     <Link to="/colonists"><Button>Colonists</Button></Link>
                     <Link to="/animals"><Button>Animals</Button></Link>
                     <Link to="/rooms"><Button>Rooms</Button></Link>
