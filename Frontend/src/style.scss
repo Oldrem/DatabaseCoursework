@@ -134,6 +134,7 @@ button:active {
   text-align: center;
 }
 
+
 // Through the tables and memes
 
 table {
@@ -147,11 +148,13 @@ table .btn-group {
 
 table td, table th {
   padding: 1px 10px 1px 10px;
-  //overflow: hidden;
-  //text-overflow: ellipsis;
 }
 
 td.Shrink, th.Shrink {
-  white-space: nowrap;
   width: 1px;
+  white-space: nowrap;  
+}
+
+.Overflow{
+  white-space:pre-wrap;
 }
