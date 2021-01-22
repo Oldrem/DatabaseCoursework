@@ -59,13 +59,13 @@ class OccupationsPage extends Component {
         const occupationList = occupations.map(occupation => {
             return <tr key={occupation.occupationId}>
                 <td style={{whiteSpace: 'nowrap'}}>{occupation.name}</td>
-                <td style={{whiteSpace: 'nowrap'}} title={occupation.description}>{occupation.descriptionShort}</td>
+                <td style={{whiteSpace: 'nowrap'}} title={occupation.description}>{occupation.description}</td>
                 <td style={{whiteSpace: 'nowrap'}}>{occupation.timeStarts}</td>
                 <td style={{whiteSpace: 'nowrap'}}>{occupation.timeEnds}</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/occupation/" + occupation.occupationId}>Edit</Button>
-                        <Button size="sm" color="danger" onClick={() => this.remove(occupation.occupationId)}>Delete</Button>
+                        <Button size="sm" to={"/occupation/" + occupation.occupationId}>Edit</Button>
+                        <Button size="sm" onClick={() => this.remove(occupation.occupationId)}>Delete</Button>
                     </ButtonGroup>
                 </td>
             </tr>
@@ -78,14 +78,14 @@ class OccupationsPage extends Component {
                         <Button color="success" tag={Link} to="/occupations/new">Опять работа?</Button>
                     </div>
                     <h3>Go find a job you sausage roll looking twat:</h3>
-                    <Table className="mt-4">
+                    <Table>
                         <thead>
                         <tr>
-                            <th width="15%">Name</th>
-                            <th width="15%">Description</th>
-                            <th width="15%">Start time</th>
-                            <th width="15%">End time</th>
-                            <th width="10%">Actions</th>
+                            <th className="Shrink">Name</th>
+                            <th>Description</th>
+                            <th className="Shrink">Start time</th>
+                            <th className="Shrink">End time</th>
+                            <th className="Shrink"></th>
                         </tr>
                         </thead>
                         <tbody>

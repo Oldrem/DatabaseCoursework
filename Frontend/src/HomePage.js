@@ -9,10 +9,7 @@ class HomePage extends React.Component{
         this.state = {role: [], colonistData: {}, isLoading: true};
     }
     componentDidMount() {
-        fetch('user/' + this.props.user)
-            .then(response => response.json())
-            .then(data => this.setState({role: data}))
-            .catch(err => {console.error('Error:', err)});
+
         fetch('api/colonist/' + this.props.user)
             .then(response => response.json())
             .then(data => this.setState({colonistData: data, isLoading: false}))
@@ -27,7 +24,7 @@ class HomePage extends React.Component{
             <div className="Wrapper2">
             <div className="main">
                 <p className="login-name">Вы вошли как {this.props.user}</p>
-                <p className="login-name">Роль: {this.state.role}</p> <br/>
+                <p className="login-name">Роль: {this.props.roles}</p> <br/>
                 <p className="login-name">Имя: {this.state.colonistData.firstName}</p>
                 <p className="login-name">Фамилия: {this.state.colonistData.lastName}</p>
                 <p className="login-name">Прозвище: {this.state.colonistData.nickname}</p>
@@ -49,6 +46,7 @@ class HomePage extends React.Component{
 const mapStateToProps = function(store) {
     return {
         user: store.appState.user,
+        roles: store.appState.roles
     }
 };
 

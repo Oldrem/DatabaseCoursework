@@ -21,7 +21,7 @@ class NavigationBar extends Component {
 
         const buttons = buttonsMetainfo.map( buttonInfo => {
             let selectedClass = window.location.pathname === buttonInfo.path ? "Selected" : "";
-            if (this.isUserOfRole(buttonInfo.roleAccess))
+            if (buttonInfo.showNavigationTab && this.isUserOfRole(buttonInfo.roleAccess))
                 return ( 
                     <Link to={buttonInfo.path} key={buttonInfo.path}>
                         <Button className={selectedClass}>{buttonInfo.name}</Button>

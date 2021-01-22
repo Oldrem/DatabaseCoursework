@@ -44,16 +44,16 @@ class AnimalsPage extends Component {
         console.log(animals);
 
         const animalList = animals.map(animal => {
-            return <tr key={animal.animalId}>
-                <td style={{whiteSpace: 'nowrap'}}>{animal.name}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{animal.animalTypeId}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{animal.responsibleColonistId}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{animal.trainingProgress}%</td>
-                <td style={{whiteSpace: 'nowrap'}}>{animal.lastResourceCollection}</td>
+            return <tr key={animal.animal.animalId}>
+                <td style={{whiteSpace: 'nowrap'}}>{animal.animal.name}</td>
+                <td style={{whiteSpace: 'nowrap'}}>{animal.animalTypeName}</td>
+                <td style={{whiteSpace: 'nowrap'}}>{animal.colonistNickname}</td>
+                <td style={{whiteSpace: 'nowrap'}}>{animal.animal.trainingProgress}%</td>
+                <td style={{whiteSpace: 'nowrap'}}>{animal.animal.lastResourceCollection}</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/colonist/" + animal.animalId}>Edit</Button>
-                        <Button size="sm" color="danger" onClick={() => this.remove(animal.animalId)}>Delete</Button>
+                        <Button size="sm" color="primary" tag={Link} to={"/colonist/" + animal.animal.animalId}>Edit</Button>
+                        <Button size="sm" color="danger" onClick={() => this.remove(animal.animal.animalId)}>Delete</Button>
                     </ButtonGroup>
                 </td>
             </tr>
@@ -66,15 +66,15 @@ class AnimalsPage extends Component {
                         <Button color="success" tag={Link} to="/colonists/new">Add an animal?</Button>
                     </div>
                     <h3>All the good boys and girls:</h3>
-                    <Table className="mt-4">
+                    <Table>
                         <thead>
                         <tr>
-                            <th width="15%">Name</th>
-                            <th width="15%">(TEMP) Animal type</th>
-                            <th width="15%">(TEMP) Responsible</th>
-                            <th width="15%">Training progress</th>
-                            <th width="15%">Last resource collection</th>
-                            <th width="10%">Actions</th>
+                            <th>Name</th>
+                            <th>Animal type</th>
+                            <th>Responsible</th>
+                            <th>Training progress</th>
+                            <th>Last resource collection</th>
+                            <th className="Shrink">Actions</th>
                         </tr>
                         </thead>
                         <tbody>

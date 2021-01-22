@@ -25,58 +25,86 @@ class App extends React.Component{
         super(props)
         const pages = [
             {
-                path: "/work",
-                name: "My work", 
-                roleAccess: ["USER"],
-                pageComponent: WorkPageContainer},
-            {
-                path: "/review",
-                name: "Review work reports", 
-                roleAccess: ["USER"],
-                pageComponent: ReviewPageContainer},
-            {
                 path: "/colonists",
-                name: "Colony residents", 
+                name: "Colony residents", showNavigationTab: true, 
                 roleAccess: ["USER"],
                 pageComponent: ColonistsContainer},
             {
+                path: "/work",
+                name: "My work", showNavigationTab: true, 
+                roleAccess: ["USER"],
+                pageComponent: WorkPageContainer},
+            {
+                path: "/report",
+                name: "Report your work progress", showNavigationTab: false, 
+                roleAccess: ["USER"],
+                pageComponent: ReportPageContainer},
+            {
+                path: "/review",
+                name: "Review work reports", showNavigationTab: true, 
+                roleAccess: ["MANAGER"],
+                pageComponent: ReviewPageContainer},
+            {
                 path: "/animals",
-                name: "Animals", 
+                name: "Animals", showNavigationTab: true, 
                 roleAccess: ["USER"],
                 pageComponent: AnimalsPageContainer},
             {
                 path: "/rooms",
-                name: "Rooms", 
+                name: "Rooms", showNavigationTab: true, 
                 roleAccess: ["USER"],
                 pageComponent: RoomsPageContainer},
             {
                 path: "/occupations",
-                name: "Occupations", 
+                name: "Occupations", showNavigationTab: true, 
                 roleAccess: ["USER"],
                 pageComponent: OccupationsPageContainer},
             {
                 path: "/resources",
-                name: "Our resources", 
+                name: "Our resources", showNavigationTab: true, 
                 roleAccess: ["USER"],
                 pageComponent: ResourcesPage},
             {
                 path: "/colonies",
-                name: "Other colonies", 
+                name: "Other colonies", showNavigationTab: true, 
                 roleAccess: ["USER"],
                 pageComponent: ColoniesPageContainer},
             {
+                path: "/edit",
+                name: "Edit user details", showNavigationTab: false,  
+                roleAccess: ["USER"],
+                pageComponent: HomeEditContainer},
+            {
                 path: "/",
-                name: "Userpage",  
+                name: "Userpage", showNavigationTab: true,  
                 roleAccess: ["USER"],
                 pageComponent: HomeContainer},
         ];
-        this.state = {pages: pages};
+        this.state = {pages: pages, isLoading: true};
+    }
+    
+    componentDidMount() {
+        this.setState({isLoading: true});        
+        fetch('user/' + this.props.user)
+            .then(response => response.json())
+            .then(data => this.props.dispatch({
+                type: "APP_SET_ROLES",
+                value: data}))
+            .then(() => this.setState({isLoading: false}))
+            .then(() => console.log(this.props.roles))
     }
 
-    isUserOfRole(roles)
+    isUserOfRole(pageRoles)
     {
-        return true;
+        let out = false;
+        this.props.roles.forEach(userRole => {
+            pageRoles.forEach(pageRole => {
+                if (userRole === pageRole) out = true; // Fuck JS c:
+            })
+        });
+        return out;
     }
+    
 
     render() {
         let isLoggedIn = !(this.props.user==="null" || this.props.user===null);
@@ -96,6 +124,17 @@ class App extends React.Component{
             );
         
         
+        if (this.state.isLoading)
+            return (
+                <div className="App">                    
+                    <div className="Page">
+                        Loading...
+                    </div>
+                    <Footer/>
+                </div>
+            );
+        
+        
         const pages = this.state.pages;
 
         const pageRouters = pages.map(page =>
@@ -104,6 +143,7 @@ class App extends React.Component{
                 return (                    
                     <Route key={page.path} path={page.path} component={page.pageComponent}/>
                 )
+            else console.log("Can't access " + page.name);
         })
 
         return (
@@ -140,6 +180,7 @@ const Footer = ()=>{
 const mapStateToProps = function(store) {
     return {
         user: store.appState.user,
+        roles: store.appState.roles
     }
 };
 

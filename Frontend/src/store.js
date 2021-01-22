@@ -5,7 +5,8 @@ import middleware from "./middlewares/middlewares";
 
 const initialState = {
     appState:{
-        user: window.localStorage.getItem("user")
+        user: window.localStorage.getItem("user"),
+        roles: []
     },
     loginState:{
         login: "",

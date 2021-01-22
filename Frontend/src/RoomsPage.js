@@ -44,14 +44,14 @@ class RoomsPage extends Component {
         console.log(rooms);
 
         const roomList = rooms.map(room => {
-            return <tr key={room.roomId}>
-                <td style={{whiteSpace: 'nowrap'}}>{room.name}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{room.roomTypeId}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{room.area}</td>
+            return <tr key={room.room.roomId}>
+                <td style={{whiteSpace: 'nowrap'}}>{room.room.name}</td>
+                <td style={{whiteSpace: 'nowrap'}}>{room.roomTypeName}</td>
+                <td style={{whiteSpace: 'nowrap'}}>{room.room.area}</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/colonist/" + room.roomId}>Edit</Button>
-                        <Button size="sm" color="danger" onClick={() => this.remove(room.roomId)}>Delete</Button>
+                        <Button size="sm" to={"/colonist/" + room.room.roomId}>Edit</Button>
+                        <Button size="sm" onClick={() => this.remove(room.room.roomId)}>Delete</Button>
                     </ButtonGroup>
                 </td>
             </tr>
@@ -68,7 +68,7 @@ class RoomsPage extends Component {
                         <thead>
                         <tr>
                             <th width="15%">Name</th>
-                            <th width="15%">(TEMP) Room type</th>
+                            <th width="15%">Room type</th>
                             <th width="15%">Area</th>
                             <th width="10%">Actions</th>
                         </tr>
