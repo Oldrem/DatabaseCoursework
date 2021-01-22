@@ -26,12 +26,14 @@ class App extends React.Component{
 
         if (!isLoggedIn)
             return (
-                <div className="App">
-                    <Header/>
-                    <Switch>
-                        <Route exact path="/register" component={RegisterContainer}/>
-                        <Route component={LoginContainer}/>
-                    </Switch>
+                <div className="App">                    
+                    <div className="Page">
+                        <Header/>
+                        <Switch>
+                            <Route exact path="/register" component={RegisterContainer}/>
+                            <Route component={LoginContainer}/>
+                        </Switch>
+                    </div>
                     <Footer/>
                 </div>
             );
@@ -51,7 +53,7 @@ class App extends React.Component{
                             <Route exact path="/work" component={WorkPageContainer}/>
                             <Route exact path="/edit" component={HomeEditContainer}/>
                             <Route exact path="/" component={HomeContainer}/>
-                        </Switch>
+                        </Switch>                        
                     </div>
                     <Footer/>
                 </div>
@@ -67,7 +69,11 @@ const Header = ()=>{
 };
 
 const Footer = ()=>{
-    return(<div className="footer">Copyright &copy;ItmoLabs all rights were broken</div>)
+    return(
+        <div className="Footer">
+            <div className="Left">ИСБД, Курсовая работа. Щербаков В.Ю., Осипов О., P33122.</div>
+            <div className="Rigt">Copyright &copy;ItmoLabs all rights were broken</div>
+        </div>)
 };
 
 
