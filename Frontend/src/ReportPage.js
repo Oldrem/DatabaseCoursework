@@ -6,11 +6,13 @@ import {connect} from "react-redux";
 class ReportPage extends Component {
 
     emptyReport = {
+        userLogin: '',
         firstName: '',
         lastName: '',
         occupation: '',
         date: '',
-        description: ''
+        description: '',
+        isReviewed: ''
     };
 
     constructor(props) {
@@ -29,13 +31,15 @@ class ReportPage extends Component {
         JSON.stringify(colonist);
         JSON.stringify(occupation);
         let today = new Date(),
-            date = today.getDate()+ '/' + (today.getMonth() + 1) + '/' + today.getFullYear() ;
+            date = today.getDate()+ '-' + (today.getMonth() + 1) + '-' + today.getFullYear() ;
         let report = {
+            userLogin: this.props.user,
             firstName: colonist.firstName,
             lastName: colonist.lastName,
             occupation: occupation.name,
             date: date,
-            description: ''
+            description: '',
+            isReviewed: 'false'
         };
         this.setState({reportBody : report});
     }
@@ -51,17 +55,17 @@ class ReportPage extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        const {item} = this.state;
+        const {reportBody} = this.state;
 
-        await fetch('/api/colonist/' + this.state.item.colonistId, {
+        await fetch('/api/report/', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(item),
+            body: JSON.stringify(reportBody),
         });
-        this.props.history.push('/');
+        this.props.history.push('/work');
     }
 
     render() {

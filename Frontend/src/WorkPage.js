@@ -1,27 +1,30 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Button, ButtonGroup, FormGroup} from "reactstrap";
+import {Button, ButtonGroup, FormGroup, Table} from "reactstrap";
 import {Link} from "react-router-dom";
 
 class WorkPage extends React.Component{
     constructor(props){
         super(props);
-        this.state = {occupations: [], isLoading: true};
+        this.state = {occupations: [], reports: [], isLoading: true};
     }
     componentDidMount() {
         /*fetch('user/' + this.props.user)
             .then(response => response.json())
             .then(data => this.setState({role: data}))
             .catch(err => {console.error('Error:', err)});*/
-        fetch('api/colonistlogin/' + this.props.user + '/occupations')
+        fetch('/api/colonistlogin/' + this.props.user + '/occupations')
             .then(response => response.json())
-            .then(data => this.setState({occupations: data, isLoading: false}))
+            .then(data => this.setState({occupations: data}))
             .catch(err => {console.error('Error:', err)});
-
+        fetch('/api/reports/' + this.props.user)
+            .then(response => response.json())
+            .then(data => this.setState({reports: data, isLoading: false}))
+            .catch(err => {console.error('Error:', err)});
     }
 
     render() {
-        const {occupations, isLoading} = this.state;
+        const {occupations, reports, isLoading} = this.state;
 
         if (isLoading) {
             return(
@@ -32,6 +35,8 @@ class WorkPage extends React.Component{
         }
 
         const occupationList = occupations.map(occupation => {
+            JSON.stringify(reports);
+            console.log(reports);
             if (occupation.timeStarts === "null") {
                 return <div key={occupation.occupationId}>
                     <p>Работа: {occupation.name}</p>
@@ -49,12 +54,43 @@ class WorkPage extends React.Component{
                     <p><Link to={'/report/' + occupation.occupationId}><Button >Отправить отчетность.</Button></Link></p>
                 </div>
             }
-            });
-        return(
+        });
+
+        const reportList = reports.map(report => {
+            if (report.isReviewed) {
+                return  <tr key={report.reportId}>
+                    <td style={{whiteSpace: 'nowrap'}}>{report.description}</td>
+                    <td style={{whiteSpace: 'nowrap'}}>{report.date}</td>
+                    <td style={{whiteSpace: 'nowrap'}}>Reviewed!</td>
+                </tr>
+            }
+            else {
+                return <tr key={report.reportId}>
+                    <td style={{whiteSpace: 'nowrap'}}>{report.description}</td>
+                    <td style={{whiteSpace: 'nowrap'}}>{report.date}</td>
+                    <td style={{whiteSpace: 'nowrap'}}>In progress</td>
+                </tr>
+            }
+        });
+
+        return (
             <div className="main-wrapper">
                 <div className="Wrapper2">
                     <div className="main">
                         {occupationList}
+                        <Table className="mt-4">
+                            <thead>
+                            <tr>
+                                <th width="45%">Report description</th>
+                                <th width="15%">Date</th>
+                                <th width="15%">State</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {reportList}
+                            </tbody>
+                        </Table>
                     </div>
                 </div>
             </div>
