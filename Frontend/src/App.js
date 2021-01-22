@@ -20,10 +20,66 @@ import ReviewPageContainer from "./Containers/ReviewPageContainer";
 
 class App extends React.Component{
 
+    constructor(props)
+    {
+        super(props)
+        const pages = [
+            {
+                path: "/work",
+                name: "My work", 
+                roleAccess: ["USER"],
+                pageComponent: WorkPageContainer},
+            {
+                path: "/review",
+                name: "Review work reports", 
+                roleAccess: ["USER"],
+                pageComponent: ReviewPageContainer},
+            {
+                path: "/colonists",
+                name: "Colony residents", 
+                roleAccess: ["USER"],
+                pageComponent: ColonistsContainer},
+            {
+                path: "/animals",
+                name: "Animals", 
+                roleAccess: ["USER"],
+                pageComponent: AnimalsPageContainer},
+            {
+                path: "/rooms",
+                name: "Rooms", 
+                roleAccess: ["USER"],
+                pageComponent: RoomsPageContainer},
+            {
+                path: "/occupations",
+                name: "Occupations", 
+                roleAccess: ["USER"],
+                pageComponent: OccupationsPageContainer},
+            {
+                path: "/resources",
+                name: "Our resources", 
+                roleAccess: ["USER"],
+                pageComponent: ResourcesPage},
+            {
+                path: "/colonies",
+                name: "Other colonies", 
+                roleAccess: ["USER"],
+                pageComponent: ColoniesPageContainer},
+            {
+                path: "/",
+                name: "Userpage",  
+                roleAccess: ["USER"],
+                pageComponent: HomeContainer},
+        ];
+        this.state = {pages: pages};
+    }
+
+    isUserOfRole(roles)
+    {
+        return true;
+    }
+
     render() {
-        console.log("User:" + this.props.user);
         let isLoggedIn = !(this.props.user==="null" || this.props.user===null);
-        console.log("Is logged in:" + isLoggedIn);
 
         if (!isLoggedIn)
             return (
@@ -31,35 +87,36 @@ class App extends React.Component{
                     <div className="Page LoginPage">
                         <Header/>
                         <Switch>
-                            <Route exact path="/register" component={RegisterContainer}/>
+                            <Route path="/register" component={RegisterContainer}/>
                             <Route component={LoginContainer}/>
                         </Switch>
                     </div>
                     <Footer/>
                 </div>
             );
-        else
-            return (
-                <div className="App">
-                    <NavigationBarContainer/>
-                    <div className="Page">
-                        <Switch>
-                            <Route exact path="/colonists" component={ColonistsContainer}/>
-                            <Route exact path="/animals" component={AnimalsPageContainer}/>
-                            <Route exact path="/rooms" component={RoomsPageContainer}/>
-                            <Route exact path="/occupations" component={OccupationsPageContainer}/>
-                            <Route exact path="/colonies" component={ColoniesPageContainer}/>
-                            <Route exact path="/resources" component={ResourcesPage}/>
-                            <Route exact path="/review" component={ReviewPageContainer}/>
-                            <Route path="/report/:occupationId" component={ReportPageContainer} />
-                            <Route exact path="/work" component={WorkPageContainer}/>
-                            <Route exact path="/edit" component={HomeEditContainer}/>
-                            <Route exact path="/" component={HomeContainer}/>
-                        </Switch>                        
-                    </div>
-                    <Footer/>
+        
+        
+        const pages = this.state.pages;
+
+        const pageRouters = pages.map(page =>
+        {
+            if (this.isUserOfRole(page.roleAccess))
+                return (                    
+                    <Route key={page.path} path={page.path} component={page.pageComponent}/>
+                )
+        })
+
+        return (
+            <div className="App">
+                <NavigationBarContainer pages={pages}/>
+                <div className="Page">
+                    <Switch>
+                        {pageRouters}
+                    </Switch>                        
                 </div>
-            );
+                <Footer/>
+            </div>
+        );
     }
 }
 

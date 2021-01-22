@@ -22,6 +22,9 @@ body {
   font-family: Helvetica;
 }
 
+
+// All buttons
+
 button{
   background-color: #6A522E;
   border-style: solid;
@@ -42,11 +45,20 @@ button:active {
   border-color: #584223 #584223 #6D5636 #6D5636;
 }
 
+
+// Navigation bar
+
+:root {
+  --navbar-height: 35px;
+  --navbar-img-size: 25px;
+}
+
 .NavigationBar{
   position: fixed;
   top: 0;
   //background-color: #6F6F6F;
-  height: 35px;
+  height: var(--navbar-height);
+  max-height: var(--navbar-height);
   padding-bottom: 1px;
   width: 100%;
   display: table;
@@ -54,13 +66,21 @@ button:active {
 }
 
 .NavigationBar a{
+  max-height: var(--navbar-height);
   height: 100%;
   display: table-cell;
+}
+
+.NavigationBar img{ //TODO
+  position: absolute;
+  margin:auto;  
+  height: 100%;
 }
 
 .NavigationBar button{
   margin-top: -1px;
   height: 100%;
+  max-height: var(--navbar-height);
   width: 100%;
   border-style: solid;
   border-width: 1px 1px 2px 1px;
@@ -69,6 +89,7 @@ button:active {
   background-size: cover;
   color: #E2E3E5;
   font-family: Helvetica;
+  text-align: center;
 }
 
 .NavigationBar button:hover {
@@ -80,6 +101,9 @@ button:active {
   background-image: url(./images/button1selected.png); 
   border-color: #5E6E78;
 }
+
+
+// Other stuff
 
 .Page{
   margin-top: 60px;

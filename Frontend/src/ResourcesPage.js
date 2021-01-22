@@ -63,7 +63,7 @@ class ResourcesPage extends Component {
                     <div className="float-right">
                         <Button color="success" tag={Link} to="/resources/new">Add resource?</Button>
                     </div>
-                    <h3>Really cool guys:</h3>
+                    <h3>Behold! Our stuff:</h3>
                     <Table className="mt-4">
                         <thead>
                         <tr>
