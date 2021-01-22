@@ -10,6 +10,7 @@ html, body {
 }
 
 .App {  
+  padding-top:35px;
   padding-bottom: 70px;
 }
 
@@ -29,6 +30,8 @@ button{
 }
 
 .NavigationBar{
+  position: fixed;
+  top: 0;
   background-color: #84878C;
   height: 35px;
   padding-bottom: 1px;
@@ -58,7 +61,7 @@ button{
 }
 
 .Page{
-  margin-top: 50px;
+  margin-top: 60px;
   margin-left: 320px;
   margin-right: 320px;
   padding: 30px;
