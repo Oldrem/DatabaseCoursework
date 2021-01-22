@@ -18,7 +18,8 @@ class ReportPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            reportBody: this.emptyReport
+            reportBody: this.emptyReport,
+            date: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,17 +32,18 @@ class ReportPage extends Component {
         JSON.stringify(colonist);
         JSON.stringify(occupation);
         let today = new Date(),
-            date = today.getDate()+ '-' + (today.getMonth() + 1) + '-' + today.getFullYear() ;
+            date = (today.getDay() < 10 ? ('0'+today.getDay()) : today.getDay())+ '.'
+                + (today.getMonth()+1< 10 ? '0'+(today.getMonth()+1) : today.getMonth()+1) + '.'
+                + today.getFullYear();
         let report = {
             userLogin: this.props.user,
             firstName: colonist.firstName,
             lastName: colonist.lastName,
             occupation: occupation.name,
-            date: date,
             description: '',
             isReviewed: 'false'
         };
-        this.setState({reportBody : report});
+        this.setState({reportBody : report, date: date});
     }
 
     handleChange(event) {
@@ -69,7 +71,7 @@ class ReportPage extends Component {
     }
 
     render() {
-        const {reportBody} = this.state;
+        const {reportBody, date} = this.state;
 
         return <div>
             <Container>
@@ -98,7 +100,7 @@ class ReportPage extends Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="date">
-                            Дата: {reportBody.date}
+                            Дата: {date}
                         </Label>
                     </FormGroup>
                     <FormGroup>

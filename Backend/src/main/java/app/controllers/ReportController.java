@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -46,6 +47,7 @@ public class ReportController {
 
     @PostMapping("/report")
     ResponseEntity<Report> createReport(@Valid @RequestBody Report report) throws URISyntaxException {
+        report.setDate(LocalDate.now());
         Report result = reportRepository.save(report);
         return ResponseEntity.created(new URI("/report/" + result.getReportId()))
                 .body(result);
@@ -53,6 +55,7 @@ public class ReportController {
 
     @PutMapping("/report/{id}")
     ResponseEntity<Report> updateReport(@Valid @RequestBody Report report) {
+        report.setDate(LocalDate.now());
         Report result = reportRepository.save(report);
         return ResponseEntity.ok().body(result);
     }

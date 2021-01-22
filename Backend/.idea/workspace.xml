@@ -6,23 +6,30 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="134dd3c4-4442-47ac-8a33-eac30983c7ab" name="Default Changelist" comment="Added roles for users + REST to grab them">
+    <list default="true" id="134dd3c4-4442-47ac-8a33-eac30983c7ab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a159692-03eb-4f74-bbe6-8c42b41f97ce.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a159692-03eb-4f74-bbe6-8c42b41f97ce/storage_v2/_src_/database/studs.ww2LBg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a159692-03eb-4f74-bbe6-8c42b41f97ce/storage_v2/_src_/database/studs.ww2LBg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a159692-03eb-4f74-bbe6-8c42b41f97ce/storage_v2/_src_/database/studs.ww2LBg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a159692-03eb-4f74-bbe6-8c42b41f97ce/storage_v2/_src_/database/studs.ww2LBg/schema/s264477.10_QGw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a159692-03eb-4f74-bbe6-8c42b41f97ce/storage_v2/_src_/database/studs.ww2LBg/schema/s264477.10_QGw.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/WebDevelopment4/WebDevelopment4.jar" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/WebDevelopment4/WebDevelopment4.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/DatabaseLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DatabaseLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/Colonist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/Colonist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/repositories/OccupationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repositories/OccupationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/requests/UserAddRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/requests/UserAddRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/responses/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/AppController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/ColonistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/ColonistController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/model/Colonist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/model/Colonist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/model/Occupation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/model/Occupation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/ColonistRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/ColonistRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/OccupationRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/OccupationRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/requests/UserAddRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/requests/UserAddRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/security/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/HomePageEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/HomePageEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/ReportPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/ReportPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/WorkPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/WorkPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,29 +51,68 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="LocalPostgres" type="feb32156:DbDataSourceImpl" />
+        <item name="HeliosPostgres" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="LocalPostgres" type="feb32156:DbDataSourceImpl" />
+        <item name="HeliosPostgres" type="feb32156:DbDataSourceImpl" />
         <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="LocalPostgres" type="feb32156:DbDataSourceImpl" />
+        <item name="HeliosPostgres" type="feb32156:DbDataSourceImpl" />
         <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="studs: database" type="162271b6:PgImplModel$Database" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="LocalPostgres" type="feb32156:DbDataSourceImpl" />
+        <item name="HeliosPostgres" type="feb32156:DbDataSourceImpl" />
         <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="studs: database" type="162271b6:PgImplModel$Database" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="LocalPostgres" type="feb32156:DbDataSourceImpl" />
+        <item name="HeliosPostgres" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="studs: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="s264477: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="HeliosPostgres" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="studs: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="s264477: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Local" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Local" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Local" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="studs: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Local" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="studs: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Local" type="feb32156:DbDataSourceImpl" />
         <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="studs: database" type="162271b6:PgImplModel$Database" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
@@ -74,7 +120,7 @@
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="LocalPostgres" type="feb32156:DbDataSourceImpl" />
+        <item name="Local" type="feb32156:DbDataSourceImpl" />
         <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="studs: database" type="162271b6:PgImplModel$Database" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
@@ -83,13 +129,13 @@
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="LocalPostgres" type="feb32156:DbDataSourceImpl" />
+        <item name="Local" type="feb32156:DbDataSourceImpl" />
         <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="studs: database" type="162271b6:PgImplModel$Database" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="users: table" type="69fad909:PgImplModel$LocalTable" />
+        <item name="colony: table" type="69fad909:PgImplModel$LocalTable" />
       </path>
     </expand>
     <select />
@@ -205,7 +251,7 @@
       <workItem from="1611045974891" duration="5901000" />
       <workItem from="1611129080835" duration="12378000" />
       <workItem from="1611151313781" duration="7975000" />
-      <workItem from="1611187625239" duration="10010000" />
+      <workItem from="1611187625239" duration="50391000" />
     </task>
     <task id="LOCAL-00001" summary="REST API for Animals, changes in pom and properties">
       <created>1611052999769</created>
@@ -249,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611229888884</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Pushed whole directory">
+      <created>1611233648063</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1611233648063</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +328,7 @@
     <MESSAGE value="Added login requirements, updated database with user table, updated pom" />
     <MESSAGE value="Login/Registration, some UI, restricted access to colonists for unlogged" />
     <MESSAGE value="Added roles for users + REST to grab them" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added roles for users + REST to grab them" />
+    <MESSAGE value="Pushed whole directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pushed whole directory" />
   </component>
 </project>

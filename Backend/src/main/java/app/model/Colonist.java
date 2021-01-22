@@ -3,17 +3,18 @@ package app.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.*;
 
 
 @Entity
 public class Colonist {
-    private @Id @GeneratedValue Long colonistId;
+    private @Id @GeneratedValue(strategy = GenerationType.SEQUENCE) Long colonistId;
     private String firstName;
     private String lastName;
     private String nickname;
-    private String birthDate;
-    private String colonyJoinDate;
+    private LocalDate birthDate;
+    private LocalDate colonyJoinDate;
     private String userLogin;
 
 
@@ -26,16 +27,17 @@ public class Colonist {
             joinColumns = { @JoinColumn(name = "colonist_id") },
             inverseJoinColumns = { @JoinColumn(name = "occupation_id") })
     @JsonIgnoreProperties("colonists")
-    private Set<Occupation> occupations = new HashSet<>();
+    private Set<Occupation> occupations;
 
     private Colonist() {}
 
-    public Colonist(String firstName, String lastName, String nickname, String birthDate, String colonyJoinDate, String userLogin) {
+    public Colonist(String firstName, String lastName, String nickname, LocalDate birthDate, String userLogin) {
+        this.occupations = new LinkedHashSet<>();
         this.firstName = firstName;
         this.lastName = lastName;
         this.nickname = nickname;
         this.birthDate = birthDate;
-        this.colonyJoinDate = colonyJoinDate;
+        this.colonyJoinDate =  LocalDate.now();;
         this.userLogin = userLogin;
     }
 
@@ -90,19 +92,19 @@ public class Colonist {
         this.nickname = nickname;
     }
 
-    public String getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
-    public String getColonyJoinDate() {
+    public LocalDate getColonyJoinDate() {
         return colonyJoinDate;
     }
 
-    public void setColonyJoinDate(String colonyJoinDate) {
+    public void setColonyJoinDate(LocalDate colonyJoinDate) {
         this.colonyJoinDate = colonyJoinDate;
     }
 

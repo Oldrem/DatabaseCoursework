@@ -1,8 +1,11 @@
 package app.model;
 
+import org.apache.tomcat.jni.Local;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalDate;
 
 @Entity
 public class Report {
@@ -12,18 +15,18 @@ public class Report {
     private String lastName;
     private String occupation;
     private String description;
-    private String date;
+    private LocalDate date;
     private Boolean isReviewed;
 
     private Report () {}
 
-    public Report(String userLogin, String firstName, String lastName, String occupation, String description, String date, Boolean isReviewed) {
+    public Report(String userLogin, String firstName, String lastName, String occupation, String description, Boolean isReviewed) {
         this.userLogin = userLogin;
         this.firstName = firstName;
         this.lastName = lastName;
         this.occupation = occupation;
         this.description = description;
-        this.date = date;
+        this.date = LocalDate.now();
         this.isReviewed = isReviewed;
     }
 
@@ -59,11 +62,11 @@ public class Report {
         this.description = description;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

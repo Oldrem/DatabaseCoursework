@@ -1,6 +1,10 @@
 package app.controllers;
 
+import app.model.Colonist;
+import app.model.Occupation;
 import app.model.User;
+import app.repositories.ColonistRepository;
+import app.repositories.OccupationRepository;
 import app.responses.BaseResponse;
 import app.user_service.*;
 import app.requests.*;
@@ -11,8 +15,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.time.LocalDate;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 
 @RestController
@@ -23,9 +30,13 @@ public class AppController {
     private int counter = 0;
 
     private final UserService userService;
+    private ColonistRepository colonistRepository;
+    private OccupationRepository occupationRepository;
 
-    public AppController(UserService userService) {
+    public AppController(UserService userService, ColonistRepository colonistRepository, OccupationRepository occupationRepository) {
         this.userService = userService;
+        this.colonistRepository = colonistRepository;
+        this.occupationRepository = occupationRepository;
     }
 
     @GetMapping
@@ -48,6 +59,12 @@ public class AppController {
 
     @PostMapping("/register")
     public BaseResponse addUser(@RequestBody UserAddRequest userAddRequest){
+
+        Colonist colonist = new Colonist("notset", "notset", "notset",
+                null, userAddRequest.getLogin());
+        Occupation occupation = occupationRepository.findByName("Срочный призывник");
+        colonist.getOccupations().add(occupation);
+        colonistRepository.save(colonist);
         boolean isOk = userService.addUser(userAddRequest.createUser());
         return new BaseResponse(isOk?200:400, isOk);
     }

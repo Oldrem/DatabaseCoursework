@@ -35,8 +35,6 @@ class WorkPage extends React.Component{
         }
 
         const occupationList = occupations.map(occupation => {
-            JSON.stringify(reports);
-            console.log(reports);
             if (occupation.timeStarts === "null") {
                 return <div key={occupation.occupationId}>
                     <p>Работа: {occupation.name}</p>
@@ -57,6 +55,8 @@ class WorkPage extends React.Component{
         });
 
         const reportList = reports.map(report => {
+            JSON.stringify(reports);
+            console.log(reports);
             if (report.isReviewed) {
                 return  <tr key={report.reportId}>
                     <td style={{whiteSpace: 'nowrap'}}>{report.description}</td>
