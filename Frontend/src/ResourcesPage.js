@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import LoadingScreen from './LoadingScreen';
 
 class ResourcesPage extends Component {
 
@@ -36,11 +37,7 @@ class ResourcesPage extends Component {
         const {resources, isLoading} = this.state;
 
         if (isLoading) {
-            return(
-                <div>
-                    <p>Loading...</p>
-                </div>
-            ) ;
+            return <LoadingScreen/>;
         }
 
         const resourceList = resources.map(resource => {

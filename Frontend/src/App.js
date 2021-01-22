@@ -16,6 +16,7 @@ import ResourcesPage from './ResourcesPage';
 import WorkPageContainer from "./Containers/WorkPageContainer";
 import ReportPageContainer from "./Containers/ReportPageContainer";
 import ReviewPageContainer from "./Containers/ReviewPageContainer";
+import LoadingScreen from './LoadingScreen';
 
 
 class App extends React.Component{
@@ -128,7 +129,7 @@ class App extends React.Component{
             return (
                 <div className="App">                    
                     <div className="Page">
-                        Loading...
+                        <LoadingScreen/>
                     </div>
                     <Footer/>
                 </div>

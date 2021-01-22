@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import LoadingScreen from './LoadingScreen';
 
 class ColoniesPage extends Component {
 
@@ -35,11 +36,7 @@ class ColoniesPage extends Component {
         const {colonies, isLoading} = this.state;
 
         if (isLoading) {
-            return(
-                <div>
-                    <p>Loading...</p>
-                </div>
-            ) ;
+            return <LoadingScreen/>;
         }
 
         const colonistList = colonies.map(colony => {

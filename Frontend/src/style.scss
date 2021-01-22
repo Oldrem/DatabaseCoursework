@@ -25,7 +25,7 @@ body {
 
 // All buttons
 
-button{
+button {
   background-color: #6A522E;
   border-style: solid;
   border-width: 3px;
@@ -103,7 +103,7 @@ button:active {
 }
 
 
-// Other stuff
+// Page elements
 
 .Page{
   margin-top: 60px;
@@ -134,6 +134,12 @@ button:active {
   text-align: center;
 }
 
+.LoadingScreen {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
 
 // Through the tables and memes
 
@@ -148,6 +154,7 @@ table .btn-group {
 
 table td, table th {
   padding: 1px 10px 1px 10px;
+  text-align: left;
 }
 
 td.Shrink, th.Shrink {
