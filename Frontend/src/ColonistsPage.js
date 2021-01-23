@@ -16,7 +16,7 @@ class Colonists extends Component {
 
     componentDidMount() {
         this.setState({isLoading: true});
-        fetch('api/colonists')
+        fetch('/api/colonists')
             .then(response => response.json())
             .then(data => this.setState({colonists: data}))
             .then(() => fetch('api/relationship/' + this.props.colonist.colonistId)

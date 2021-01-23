@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.time.LocalTime;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -32,6 +33,23 @@ public class Occupation {
         this.description = description;
         this.timeStarts = timeStarts;
         this.timeEnds = timeEnds;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Occupation that = (Occupation) o;
+        return occupationId.equals(that.occupationId) &&
+                name.equals(that.name) &&
+                Objects.equals(description, that.description) &&
+                Objects.equals(timeStarts, that.timeStarts) &&
+                Objects.equals(timeEnds, that.timeEnds);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(occupationId, name, description, timeStarts, timeEnds);
     }
 
     public Long getOccupationId() {

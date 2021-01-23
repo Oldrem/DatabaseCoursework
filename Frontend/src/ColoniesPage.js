@@ -14,7 +14,7 @@ class ColoniesPage extends Component {
 
     componentDidMount() {
         this.setState({isLoading: true});
-        fetch('api/colonies')
+        fetch('/api/colonies')
             .then(response => response.json())
             .then(data => this.setState({colonies: data, isLoading: false}));
     }

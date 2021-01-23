@@ -8,12 +8,17 @@ class OccupationsPage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {occupations: [], isLoading: true};
+        this.state = {occupations: [], colonist: {}, isLoading: true};
         this.remove = this.remove.bind(this);
+        this.signIn = this.signIn.bind(this);
     }
 
     componentDidMount() {
         this.setState({isLoading: true});
+        fetch('/api/colonist/' + this.props.user)
+            .then(response => response.json())
+            .then(data => this.setState({colonist : data}));
+
         fetch('/api/occupations')
             .then(response => response.json())
             .then(data => this.setState({occupations: data, isLoading: false}))
@@ -45,8 +50,20 @@ class OccupationsPage extends Component {
         });
     }
 
+    async signIn(id){
+        await fetch('/api/colonist/addjob/' + id,{
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state.colonist),
+        });
+    }
+
     render() {
         const {occupations, isLoading} = this.state;
+
 
         if (isLoading) {
             return(
@@ -55,7 +72,6 @@ class OccupationsPage extends Component {
                 </div>
             );
         }
-
         const occupationList = occupations.map(occupation => {
             return <tr key={occupation.occupationId}>
                 <td className="Shrink">{occupation.name}</td>
@@ -64,8 +80,9 @@ class OccupationsPage extends Component {
                 <td className="Shrink">{occupation.timeEnds}</td>
                 <td>
                     <ButtonGroup>
+                        <Button size="sm" onClick={() => this.signIn(occupation.occupationId)}>Sign in</Button>
                         <Link to={'/occupations/' + occupation.occupationId}><Button >Edit.</Button></Link>
-                        <Button size="sm" onClick={() => this.remove(occupation.occupationId)}>Delete</Button>
+                        <Button size="sm"  onClick={() => this.remove(occupation.occupationId)}>Delete</Button>
                     </ButtonGroup>
                 </td>
             </tr>
@@ -98,5 +115,11 @@ class OccupationsPage extends Component {
     }
 }
 
+const mapStateToProps = function(store) {
+    return {
+        user: store.appState.user,
+        roles: store.appState.roles
+    }
+};
 
-export default OccupationsPage;
+export default connect(mapStateToProps)(OccupationsPage);

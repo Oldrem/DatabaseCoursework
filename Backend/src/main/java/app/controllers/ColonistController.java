@@ -3,6 +3,7 @@ package app.controllers;
 import app.model.Colonist;
 import app.model.Occupation;
 import app.repositories.ColonistRepository;
+import app.repositories.OccupationRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,8 +16,10 @@ import java.util.Collection;
 @RequestMapping("/api")
 public class ColonistController {
     private ColonistRepository colonistRepository;
+    private OccupationRepository occupationRepository;
 
-    public ColonistController(ColonistRepository colonistRepository) {
+    public ColonistController(ColonistRepository colonistRepository, OccupationRepository occupationRepository) {
+        this.occupationRepository = occupationRepository;
         this.colonistRepository = colonistRepository;
     }
 
@@ -69,6 +72,20 @@ public class ColonistController {
                     newColonist.setColonistId(id);
                     return colonistRepository.save(newColonist);
                 });
+    }
+
+    @PutMapping("/colonist/addjob/{id}")
+    Colonist addOccupation(@RequestBody Colonist newColonist, @PathVariable Long id) {
+        Occupation occupation = occupationRepository.findByOccupationId(id);
+        newColonist.getOccupations().add(occupation);
+        return colonistRepository.save(newColonist);
+    }
+
+    @PutMapping("/colonist/removejob/{id}")
+    Colonist removeOccupation(@RequestBody Colonist newColonist, @PathVariable Long id) {
+        Occupation occupation = occupationRepository.findByOccupationId(id);
+        newColonist.getOccupations().remove(occupation);
+        return colonistRepository.save(newColonist);
     }
 
     @DeleteMapping("/colonist/{id}")

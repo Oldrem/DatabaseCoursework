@@ -47,8 +47,8 @@ public class RelationshipController {
                 .body(result);
     }
 
-    @PutMapping("/relationship/{id}")
-    ResponseEntity<Relationship> updateRelationship(@Valid @RequestBody Relationship relationship) {
+    @PutMapping("/relationship/")
+    ResponseEntity<Relationship> updateRelationship(@Valid @RequestBody Relationship relationship, @PathVariable Long id1, @PathVariable Long id2) {
         Relationship result = relationshipRepository.save(relationship);
         return ResponseEntity.ok().body(result);
     }

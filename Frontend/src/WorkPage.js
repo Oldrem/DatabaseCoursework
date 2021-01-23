@@ -6,13 +6,13 @@ import {Link} from "react-router-dom";
 class WorkPage extends React.Component{
     constructor(props){
         super(props);
-        this.state = {occupations: [], reports: [], isLoading: true};
+        this.state = {occupations: [], reports: [], colonist: {}, isLoading: true};
+        this.signOff = this.signOff.bind(this);
     }
     componentDidMount() {
-        /*fetch('user/' + this.props.user)
+        fetch('/api/colonist/' + this.props.user)
             .then(response => response.json())
-            .then(data => this.setState({role: data}))
-            .catch(err => {console.error('Error:', err)});*/
+            .then(data => this.setState({colonist : data}));
         fetch('/api/colonistlogin/' + this.props.user + '/occupations')
             .then(response => response.json())
             .then(data => this.setState({occupations: data}))
@@ -21,6 +21,20 @@ class WorkPage extends React.Component{
             .then(response => response.json())
             .then(data => this.setState({reports: data, isLoading: false}))
             .catch(err => {console.error('Error:', err)});
+    }
+
+    async signOff(id){
+        await fetch('/api/colonist/removejob/' + id,{
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state.colonist),
+        }).then(() => {
+            let updatedOccupations = [...this.state.occupations].filter(i => i.occupationId !== id);
+            this.setState({occupations: updatedOccupations});
+        });
     }
 
     render() {
@@ -41,7 +55,8 @@ class WorkPage extends React.Component{
                     <p>Время начала: {occupation.timeStarts}</p>
                     <p>Время окончания: {occupation.timeEnds}</p>
                     <p>Описание: {occupation.description}</p>
-                    <p><Link to={'/report/' + occupation.occupationId}><Button >Отправить отчетность.</Button></Link></p>
+                    <p> <Button size="sm" onClick={() => this.signOff(occupation.occupationId)}>Sign off</Button>
+                        <Link to={'/report/' + occupation.occupationId}><Button >Send work report.</Button></Link> </p>
                 </div>
             }
             else {
@@ -49,7 +64,8 @@ class WorkPage extends React.Component{
                     <p>Работа: {occupation.name}</p>
                     <p>Время: Конкретное расписание отсутствует</p>
                     <p>Описание: {occupation.description}</p>
-                    <p><Link to={'/report/' + occupation.occupationId}><Button >Отправить отчетность.</Button></Link></p>
+                    <p> <Button size="sm" onClick={() => this.signOff(occupation.occupationId)}>Sign off</Button>
+                        <Link to={'/report/' + occupation.occupationId}><Button >Send work report.</Button></Link> </p>
                 </div>
             }
         });

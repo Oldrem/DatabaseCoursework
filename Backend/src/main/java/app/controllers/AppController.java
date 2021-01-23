@@ -50,6 +50,7 @@ public class AppController {
         User user = userService.getUser(login);
         String[] roles = user.getRoles();
         if (roles != null) {
+            System.out.println(roles[0]);
             return ResponseEntity.ok().body(roles);
         }
         else {

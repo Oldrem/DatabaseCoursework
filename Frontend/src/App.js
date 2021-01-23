@@ -120,6 +120,7 @@ class App extends React.Component{
     }
     
     componentDidMount() {
+
         this.setState({isLoading: true});        
         fetch('/user/' + this.props.user)
             .then(response => response.json())
