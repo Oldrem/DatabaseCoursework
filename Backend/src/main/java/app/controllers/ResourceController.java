@@ -27,8 +27,15 @@ public class ResourceController {
     }
 
     @GetMapping("/resource/{id}")
-    ResponseEntity<?> getResource(@PathVariable Long id) {
+    ResponseEntity<?> getResourceById(@PathVariable Long id) {
         Optional<Resource> resource = resourceRepository.findById(id);
+        return resource.map(response -> ResponseEntity.ok().body(response))
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    @GetMapping("/resourcename/{name}")
+    ResponseEntity<?> getResourceByName(@PathVariable String name) {
+        Optional<Resource> resource = resourceRepository.findByName(name);
         return resource.map(response -> ResponseEntity.ok().body(response))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }

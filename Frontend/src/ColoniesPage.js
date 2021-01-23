@@ -48,7 +48,7 @@ class ColoniesPage extends Component {
                 <td style={{whiteSpace: 'nowrap'}}>WIP</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/colony/" + colony.colonyId}>Edit</Button>
+                        <Link to={'/colonies/' + colony.colonyId}><Button >Edit.</Button></Link>
                         <Button size="sm" color="danger" onClick={() => this.remove(colony.colonyId)}>Delete</Button>
                     </ButtonGroup>
                 </td>
@@ -59,7 +59,7 @@ class ColoniesPage extends Component {
             <div>
                 <Container fluid>
                     <div className="float-right">
-                        <Button color="success" tag={Link} to="/colonists/new">A new challenger?</Button>
+                        <Button color="success" tag={Link} to="/colonies/new">A new challenger?</Button>
                     </div>
                     <h3>Full list of a lower class:</h3>
                     <Table className="mt-4">
