@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import LoadingScreen from './LoadingScreen';
 
 class ResourcesPage extends Component {
 
@@ -13,7 +14,7 @@ class ResourcesPage extends Component {
 
     componentDidMount() {
         this.setState({isLoading: true});
-        fetch('api/storedResources')
+        fetch('/api/resourceCount')
             .then(response => response.json())
             .then(data => this.setState({resources: data, isLoading: false}));
     }
@@ -36,22 +37,19 @@ class ResourcesPage extends Component {
         const {resources, isLoading} = this.state;
 
         if (isLoading) {
-            return(
-                <div>
-                    <p>Loading...</p>
-                </div>
-            ) ;
+            return <LoadingScreen/>;
         }
 
         const resourceList = resources.map(resource => {
-            return <tr key={resource.resourceId}>
-                <td style={{whiteSpace: 'nowrap'}}>{resource.storedResourceId.resourceId}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{resource.storedResourceId.roomId}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{resource.amount}</td>
+            let roomCount = resource.roomIds.length;
+            return <tr key={resource.resource.resourceId}>
+                <td>{resource.resource.name}</td>
+                <td>{resource.amount}</td>
+                <td>{roomCount} rooms...</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/resource/" + resource.resourceId}>Edit</Button>
-                        <Button size="sm" color="danger" onClick={() => this.remove(resource.resourceId)}>Delete</Button>
+                        <Button to={"/resource/" + resource.resourceId}>Edit</Button>
+                        <Button onClick={() => this.remove(resource.resourceId)}>Delete</Button>
                     </ButtonGroup>
                 </td>
             </tr>
@@ -67,10 +65,10 @@ class ResourcesPage extends Component {
                     <Table className="mt-4">
                         <thead>
                         <tr>
-                            <th width="15%">Name</th>
-                            <th width="15%">In room</th>
-                            <th width="15%">Amount</th>
-                            <th width="10%">Actions</th>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>In rooms</th>
+                            <th className="Shrink">Actions</th>
                         </tr>
                         </thead>
                         <tbody>

@@ -58,10 +58,10 @@ class OccupationsPage extends Component {
 
         const occupationList = occupations.map(occupation => {
             return <tr key={occupation.occupationId}>
-                <td style={{whiteSpace: 'nowrap'}}>{occupation.name}</td>
-                <td style={{whiteSpace: 'nowrap'}} title={occupation.description}>{occupation.description}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{occupation.timeStarts}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{occupation.timeEnds}</td>
+                <td className="Shrink">{occupation.name}</td>
+                <td className="Overflow" title={occupation.description}>{occupation.description}</td>
+                <td className="Shrink">{occupation.timeStarts}</td>
+                <td className="Shrink">{occupation.timeEnds}</td>
                 <td>
                     <ButtonGroup>
                         <Button size="sm" to={"/occupation/" + occupation.occupationId}>Edit</Button>
@@ -82,7 +82,7 @@ class OccupationsPage extends Component {
                         <thead>
                         <tr>
                             <th className="Shrink">Name</th>
-                            <th>Description</th>
+                            <th className="Overflow">Description</th>
                             <th className="Shrink">Start time</th>
                             <th className="Shrink">End time</th>
                             <th className="Shrink"></th>

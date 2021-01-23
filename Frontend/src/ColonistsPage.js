@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import LoadingScreen from './LoadingScreen';
 
 class Colonists extends Component {
 
@@ -35,11 +36,7 @@ class Colonists extends Component {
         const {colonists, isLoading} = this.state;
 
         if (isLoading) {
-            return(
-                <div>
-                    <p>Loading...</p>
-                </div>
-            ) ;
+            return <LoadingScreen/>;
         }
 
         const colonistList = colonists.map(colonist => {
@@ -51,8 +48,8 @@ class Colonists extends Component {
                 <td style={{whiteSpace: 'nowrap'}}>{colonist.colonyJoinDate}</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/colonist/" + colonist.colonistId}>Edit</Button>
-                        <Button size="sm" color="danger" onClick={() => this.remove(colonist.colonistId)}>Delete</Button>
+                        <Button to={"/colonist/" + colonist.colonistId}>Edit</Button>
+                        <Button onClick={() => this.remove(colonist.colonistId)}>Delete</Button>
                     </ButtonGroup>
                 </td>
             </tr>
@@ -73,7 +70,7 @@ class Colonists extends Component {
                             <th width="15%">Nickname</th>
                             <th width="15%">Birth Date</th>
                             <th width="15%">Colony Join Date</th>
-                            <th width="10%">Actions</th>
+                            <th className="Shrink">Actions</th>
                         </tr>
                         </thead>
                         <tbody>

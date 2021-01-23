@@ -17,7 +17,7 @@ import WorkPageContainer from "./Containers/WorkPageContainer";
 import ReportPageContainer from "./Containers/ReportPageContainer";
 import ReviewPageContainer from "./Containers/ReviewPageContainer";
 import AnimalsEditContainer from "./Containers/AnimalsEditContainer";
-
+import LoadingScreen from './LoadingScreen';
 
 class App extends React.Component{
 
@@ -134,7 +134,7 @@ class App extends React.Component{
             return (
                 <div className="App">                    
                     <div className="Page">
-                        Loading...
+                        <LoadingScreen/>
                     </div>
                     <Footer/>
                 </div>
@@ -145,7 +145,7 @@ class App extends React.Component{
 
         const pageRouters = pages.map(page =>
         {
-            if (true)
+            if (this.isUserOfRole(page.roleAccess))
                 return (                    
                     <Route key={page.path} path={page.path} component={page.pageComponent}/>
                 )
