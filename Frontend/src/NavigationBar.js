@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import id_card from "./images/id-card.png"
+import {connect} from "react-redux";
 
 class NavigationBar extends Component {
 
