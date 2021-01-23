@@ -18,6 +18,7 @@ import ReportPageContainer from "./Containers/ReportPageContainer";
 import ReviewPageContainer from "./Containers/ReviewPageContainer";
 import AnimalsEditContainer from "./Containers/AnimalsEditContainer";
 import RoomsEditContainer from "./Containers/RoomsEditContainer";
+import OccupationsEditContainer from "./Containers/OccupationsEditContainer";
 import LoadingScreen from './LoadingScreen';
 
 class App extends React.Component{
@@ -67,8 +68,13 @@ class App extends React.Component{
                 roleAccess: ["USER"],
                 pageComponent: RoomsPageContainer},
             {
+                path: "/occupations/:occupationId",
+                name: "Editing occupations", showNavigationTab: false,
+                roleAccess: ["USER"],
+                pageComponent: OccupationsEditContainer},
+            {
                 path: "/occupations",
-                name: "Occupations", showNavigationTab: true, 
+                name: "Occupations", showNavigationTab: true,
                 roleAccess: ["USER"],
                 pageComponent: OccupationsPageContainer},
             {

@@ -7,16 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="134dd3c4-4442-47ac-8a33-eac30983c7ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/responses/AmountResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Frontend/src/Containers/RoomsEditContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Frontend/src/RoomsEdit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/Containers/OccupationsEditContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/OccupationsEdit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/WebDevelopment4/WebDevelopment4.jar" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/WebDevelopment4/WebDevelopment4.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/TransactionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/TransactionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/TransactionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/model/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/model/Animal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/OccupationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/OccupationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/Occupation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/Occupation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/OccupationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/OccupationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/model/Occupation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/model/Occupation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/RoomsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/RoomsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/OccupationsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/OccupationsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/ReportPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/ReportPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +240,7 @@
       <workItem from="1611129080835" duration="12378000" />
       <workItem from="1611151313781" duration="7975000" />
       <workItem from="1611187625239" duration="65208000" />
-      <workItem from="1611355097158" duration="6595000" />
+      <workItem from="1611355097158" duration="8272000" />
     </task>
     <task id="LOCAL-00001" summary="REST API for Animals, changes in pom and properties">
       <created>1611052999769</created>

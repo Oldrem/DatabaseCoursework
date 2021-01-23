@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,8 +13,8 @@ public class Occupation {
     private @Id @GeneratedValue Long occupationId;
     private String name;
     private String description;
-    private String timeStarts;
-    private String timeEnds;
+    private LocalTime timeStarts;
+    private LocalTime timeEnds;
 
     @JsonIgnoreProperties("occupations")
     @ManyToMany(fetch = FetchType.LAZY,
@@ -26,7 +27,7 @@ public class Occupation {
 
     public Occupation() {}
 
-    public Occupation(String name, String description, String timeStarts, String timeEnds) {
+    public Occupation(String name, String description, LocalTime timeStarts, LocalTime timeEnds) {
         this.name = name;
         this.description = description;
         this.timeStarts = timeStarts;
@@ -57,19 +58,19 @@ public class Occupation {
         this.description = description;
     }
 
-    public String getTimeStarts() {
+    public LocalTime getTimeStarts() {
         return timeStarts;
     }
 
-    public void setTimeStarts(String timeStarts) {
+    public void setTimeStarts(LocalTime timeStarts) {
         this.timeStarts = timeStarts;
     }
 
-    public String getTimeEnds() {
+    public LocalTime getTimeEnds() {
         return timeEnds;
     }
 
-    public void setTimeEnds(String timeEnds) {
+    public void setTimeEnds(LocalTime timeEnds) {
         this.timeEnds = timeEnds;
     }
 

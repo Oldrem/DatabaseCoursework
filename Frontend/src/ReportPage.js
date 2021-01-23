@@ -76,7 +76,7 @@ class ReportPage extends Component {
         return <div>
             <Container>
                 <div className="main-wrapper"><div className="Wrapper2"><div className="main">
-                    <h3>Форма отправки отчетности:</h3>
+                    <h3>Report form:</h3>
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Label for="firstName">
@@ -94,7 +94,7 @@ class ReportPage extends Component {
                         </Label>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="description">Подробный отчет за сегодняшний день:</Label><br/>
+                        <Label for="description">Detailed report of the work day:</Label><br/>
                         <Input type="textarea" name="description" id="report-description" value={reportBody.description || ''}
                                onChange={this.handleChange}/>
                     </FormGroup>

@@ -41,7 +41,9 @@ public class OccupationController {
     }
 
     @PutMapping("/occupation/{id}")
-    ResponseEntity<Occupation> updateOccupation(@Valid @RequestBody Occupation occupation) {
+    ResponseEntity<Occupation> updateOccupation(@Valid @RequestBody Occupation occupation, @PathVariable Long id) {
+        Occupation oldOccupation = occupationRepository.findByOccupationId(id);
+        occupation.setColonists(oldOccupation.getColonists());
         Occupation result = occupationRepository.save(occupation);
         return ResponseEntity.ok().body(result);
     }
