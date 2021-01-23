@@ -18,6 +18,7 @@ import ReportPageContainer from "./Containers/ReportPageContainer";
 import ReviewPageContainer from "./Containers/ReviewPageContainer";
 import AnimalsEditContainer from "./Containers/AnimalsEditContainer";
 import RoomsEditContainer from "./Containers/RoomsEditContainer";
+import TransactionsPageContainer from "./Containers/TransactionsPageContainer";
 import LoadingScreen from './LoadingScreen';
 
 class App extends React.Component{
@@ -76,6 +77,11 @@ class App extends React.Component{
                 name: "Our resources", showNavigationTab: true, 
                 roleAccess: ["USER"],
                 pageComponent: ResourcesPage},
+            {
+                path: "/transactions",
+                name: "Trade deals", showNavigationTab: true, 
+                roleAccess: ["USER"],
+                pageComponent: TransactionsPageContainer},
             {
                 path: "/colonies",
                 name: "Other colonies", showNavigationTab: true, 
