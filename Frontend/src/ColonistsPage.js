@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import LoadingScreen from './LoadingScreen';
+import SuperTable from './SuperTable';
 
 class Colonists extends Component {
 
@@ -39,46 +40,34 @@ class Colonists extends Component {
             return <LoadingScreen/>;
         }
 
-        const colonistList = colonists.map(colonist => {
-            return <tr key={colonist.colonistId}>
-                <td style={{whiteSpace: 'nowrap'}}>{colonist.firstName}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{colonist.lastName}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{colonist.nickname}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{colonist.birthDate}</td>
-                <td style={{whiteSpace: 'nowrap'}}>{colonist.colonyJoinDate}</td>
-                <td>
-                    <ButtonGroup>
-                        <Button to={"/colonist/" + colonist.colonistId}>Edit</Button>
-                        <Button onClick={() => this.remove(colonist.colonistId)}>Delete</Button>
-                    </ButtonGroup>
-                </td>
-            </tr>
+        const rows = colonists.map(colonist => {
+            return [
+                colonist.firstName,
+                colonist.lastName,
+                colonist.nickname,
+                colonist.birthDate,
+                colonist.colonyJoinDate,
+                <ButtonGroup>
+                            <Button to={"/colonist/" + colonist.colonistId}>Edit</Button>
+                            <Button onClick={() => this.remove(colonist.colonistId)}>Delete</Button>
+                </ButtonGroup>,
+            ]
         });
 
+        const labels = [
+            {name: "First Name"},
+            {name: "Last Name"},
+            {name: "Nickname"},
+            {name: "Birth Date"},
+            {name: "Colony Join Date"},
+            {name: "Actions", class: "Shrink"},
+        ];
+
+        const addButton = <Button to="/colonists/new">Add Colonist?</Button>;
+
         return (
-            <div>
-                <Container fluid>
-                    <div className="float-right">
-                        <Button color="success" tag={Link} to="/colonists/new">Add Colonist?</Button>
-                    </div>
-                    <h3>Really cool guys:</h3>
-                    <Table className="mt-4">
-                        <thead>
-                        <tr>
-                            <th width="15%">Name</th>
-                            <th width="15%">Last Name</th>
-                            <th width="15%">Nickname</th>
-                            <th width="15%">Birth Date</th>
-                            <th width="15%">Colony Join Date</th>
-                            <th className="Shrink">Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            {colonistList}
-                        </tbody>
-                    </Table>
-                </Container>
-            </div>
+            <SuperTable title="Really cool guys:" 
+                        labels={labels} rows={rows} addButton={addButton} enableSearch/>
         );
     }
 }

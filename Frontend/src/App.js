@@ -131,7 +131,6 @@ class App extends React.Component{
             return (
                 <div className="App">                    
                     <div className="Page LoginPage">
-                        <Header/>
                         <Switch>
                             <Route path="/register" component={RegisterContainer}/>
                             <Route component={LoginContainer}/>
