@@ -20,7 +20,6 @@ class NavigationBar extends Component {
         });
         return out;
     }
-    
     render() {
 
         const buttonsMetainfo = this.props.pages;
@@ -43,4 +42,11 @@ class NavigationBar extends Component {
     }
 }
 
-export default NavigationBar;
+
+const mapStateToProps = function(store) {
+    return {
+        roles: store.appState.roles
+    }
+};
+
+export default connect(mapStateToProps)(NavigationBar);
