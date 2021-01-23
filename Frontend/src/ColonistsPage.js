@@ -47,8 +47,7 @@ class Colonists extends Component {
         const relationships = this.state.relationships;
 
         const rows = colonists.map(colonist => {
-
-            let rel = relationships.find(rel => rel. colonist.colonistId);
+            let rel = relationships.find(rel => rel.relationshipId.colonist2Id === colonist.colonistId);
             let relLevel = rel ? rel.level : 0;
             return [
                 colonist.firstName,
