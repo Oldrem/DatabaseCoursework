@@ -7,20 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="134dd3c4-4442-47ac-8a33-eac30983c7ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Frontend/src/ColoniesEdit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Frontend/src/Containers/ColoniesEditContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Frontend/src/Containers/ResourcesEditContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Frontend/src/ResourcesEdit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/WebDevelopment4/WebDevelopment4.jar" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/WebDevelopment4/WebDevelopment4.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/ResourceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/RoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/repositories/ResourceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repositories/ResourceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/repositories/RoomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repositories/RoomRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/ResourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/ResourceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/RoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/RoomController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/ColoniesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/ColoniesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/ResourceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/ResourceRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/RoomRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/RoomRepository.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -243,7 +232,7 @@
       <workItem from="1611129080835" duration="12378000" />
       <workItem from="1611151313781" duration="7975000" />
       <workItem from="1611187625239" duration="65208000" />
-      <workItem from="1611355097158" duration="11121000" />
+      <workItem from="1611355097158" duration="11710000" />
     </task>
     <task id="LOCAL-00001" summary="REST API for Animals, changes in pom and properties">
       <created>1611052999769</created>
