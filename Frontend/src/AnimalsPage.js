@@ -12,7 +12,7 @@ class AnimalsPage extends Component {
 
     componentDidMount() {
         this.setState({isLoading: true});
-        fetch('api/animals')
+        fetch('/api/animals')
             .then(response => response.json())
             .then(data => this.setState({animals: data, isLoading: false}));
     }
@@ -52,7 +52,7 @@ class AnimalsPage extends Component {
                 <td style={{whiteSpace: 'nowrap'}}>{animal.animal.lastResourceCollection}</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/colonist/" + animal.animal.animalId}>Edit</Button>
+                        <Link to={'/animals/' + animal.animal.animalId}><Button >Edit.</Button></Link>
                         <Button size="sm" color="danger" onClick={() => this.remove(animal.animal.animalId)}>Delete</Button>
                     </ButtonGroup>
                 </td>
@@ -63,7 +63,7 @@ class AnimalsPage extends Component {
             <div>
                 <Container fluid>
                     <div className="float-right">
-                        <Button color="success" tag={Link} to="/colonists/new">Add an animal?</Button>
+                        <Button color="success" tag={Link} to="/animals/new">Add an animal?</Button>
                     </div>
                     <h3>All the good boys and girls:</h3>
                     <Table>

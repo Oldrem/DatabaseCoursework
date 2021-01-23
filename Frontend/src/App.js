@@ -16,6 +16,7 @@ import ResourcesPage from './ResourcesPage';
 import WorkPageContainer from "./Containers/WorkPageContainer";
 import ReportPageContainer from "./Containers/ReportPageContainer";
 import ReviewPageContainer from "./Containers/ReviewPageContainer";
+import AnimalsEditContainer from "./Containers/AnimalsEditContainer";
 
 
 class App extends React.Component{
@@ -35,7 +36,7 @@ class App extends React.Component{
                 roleAccess: ["USER"],
                 pageComponent: WorkPageContainer},
             {
-                path: "/report",
+                path: "/report/:occupationId",
                 name: "Report your work progress", showNavigationTab: false, 
                 roleAccess: ["USER"],
                 pageComponent: ReportPageContainer},
@@ -44,6 +45,11 @@ class App extends React.Component{
                 name: "Review work reports", showNavigationTab: true, 
                 roleAccess: ["MANAGER"],
                 pageComponent: ReviewPageContainer},
+            {
+                path: "/animals/:animalId",
+                name: "Editing animals", showNavigationTab: true,
+                roleAccess: ["USER"],
+                pageComponent: AnimalsEditContainer},
             {
                 path: "/animals",
                 name: "Animals", showNavigationTab: true, 
@@ -85,7 +91,7 @@ class App extends React.Component{
     
     componentDidMount() {
         this.setState({isLoading: true});        
-        fetch('user/' + this.props.user)
+        fetch('/user/' + this.props.user)
             .then(response => response.json())
             .then(data => this.props.dispatch({
                 type: "APP_SET_ROLES",
@@ -139,7 +145,7 @@ class App extends React.Component{
 
         const pageRouters = pages.map(page =>
         {
-            if (this.isUserOfRole(page.roleAccess))
+            if (true)
                 return (                    
                     <Route key={page.path} path={page.path} component={page.pageComponent}/>
                 )

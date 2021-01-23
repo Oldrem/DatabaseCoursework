@@ -3,6 +3,7 @@ package app.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 public class Animal {
@@ -11,11 +12,11 @@ public class Animal {
     private Long animalTypeId;
     private Long responsibleColonistId;
     private Integer trainingProgress;
-    private String lastResourceCollection;
+    private LocalDateTime lastResourceCollection;
 
     private Animal() {}
 
-    public Animal(String name, Long animalTypeId, Long responsibleColonistId, Integer trainingProgress, String lastResourceCollection) {
+    public Animal(String name, Long animalTypeId, Long responsibleColonistId, Integer trainingProgress, LocalDateTime lastResourceCollection) {
         this.name = name;
         this.animalTypeId = animalTypeId;
         this.responsibleColonistId = responsibleColonistId;
@@ -63,11 +64,11 @@ public class Animal {
         this.trainingProgress = trainingProgress;
     }
 
-    public String getLastResourceCollection() {
+    public LocalDateTime getLastResourceCollection() {
         return lastResourceCollection;
     }
 
-    public void setLastResourceCollection(String lastResourceCollection) {
+    public void setLastResourceCollection(LocalDateTime lastResourceCollection) {
         this.lastResourceCollection = lastResourceCollection;
     }
 }

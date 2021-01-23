@@ -6,18 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="134dd3c4-4442-47ac-8a33-eac30983c7ab" name="Default Changelist" comment="Pushed whole directory">
+    <list default="true" id="134dd3c4-4442-47ac-8a33-eac30983c7ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/AnimalsEdit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/Containers/AnimalsEditContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/WebDevelopment4/WebDevelopment4.jar" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/WebDevelopment4/WebDevelopment4.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/RelationshipController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/RelationshipController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/TransactionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/RelationshipId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/RelationshipId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/repositories/RelationshipRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repositories/RelationshipRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/RelationshipController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/RelationshipController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/TransactionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/TransactionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/repositories/RelationshipRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/repositories/RelationshipRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/AnimalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/AnimalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controllers/AnimalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controllers/AnimalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/AnimalsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/AnimalsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/App.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +159,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../WebDev4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Frontend" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -239,7 +237,8 @@
       <workItem from="1611045974891" duration="5901000" />
       <workItem from="1611129080835" duration="12378000" />
       <workItem from="1611151313781" duration="7975000" />
-      <workItem from="1611187625239" duration="64029000" />
+      <workItem from="1611187625239" duration="65208000" />
+      <workItem from="1611355097158" duration="2639000" />
     </task>
     <task id="LOCAL-00001" summary="REST API for Animals, changes in pom and properties">
       <created>1611052999769</created>
@@ -304,7 +303,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611335102553</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Detailed API for Transaction and Relationship">
+      <created>1611340403975</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1611340403975</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Detailed API for Transaction and Relationship">
+      <created>1611340439450</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1611340439450</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +346,7 @@
     <MESSAGE value="Pushed whole directory" />
     <MESSAGE value="Added detailed responses for Animal and Room" />
     <MESSAGE value="Added detailed api for StoredResource" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added detailed api for StoredResource" />
+    <MESSAGE value="Detailed API for Transaction and Relationship" />
+    <option name="LAST_COMMIT_MESSAGE" value="Detailed API for Transaction and Relationship" />
   </component>
 </project>
