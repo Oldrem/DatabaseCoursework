@@ -8,6 +8,7 @@ import app.repositories.ColonyRepository;
 import app.repositories.ResourceRepository;
 import app.repositories.RoomRepository;
 import app.repositories.TransactionRepository;
+import app.responses.AmountResponse;
 import app.responses.TransactionResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -59,6 +60,41 @@ public class TransactionController {
             transactionResponses.add(new TransactionResponse(transaction, resource.getName(), room.getName(), colony.getName()));
         }
         return transactionResponses;
+    }
+
+    @GetMapping("/transactions/{from}/{to}")
+    Collection<TransactionResponse> transactions(@PathVariable Long from, @PathVariable Long to) {
+        Collection<Transaction> transactions = (Collection<Transaction>) transactionRepository.findAll();
+        Collection<Resource> resources = (Collection<Resource>) resourceRepository.findAll();
+        Collection<Room> rooms = (Collection<Room>) roomRepository.findAll();
+        Collection<Colony> colonies = (Collection<Colony>) colonyRepository.findAll();
+        List<TransactionResponse> transactionResponses = new ArrayList<>();
+        long counter = 0;
+        for(Transaction transaction : transactions) {
+            counter++;
+            if (counter < from) continue;
+            if (counter > to) break;
+            Room room = rooms.stream()
+                    .filter(rm -> transaction.getRoomId().equals(rm.getRoomId()))
+                    .findAny()
+                    .orElse(null);
+            Resource resource = resources.stream()
+                    .filter(rs -> transaction.getResourceId().equals(rs.getResourceId()))
+                    .findAny()
+                    .orElse(null);
+            Colony colony = colonies.stream()
+                    .filter(rs -> transaction.getColonyId().equals(rs.getColonyId()))
+                    .findAny()
+                    .orElse(null);
+            transactionResponses.add(new TransactionResponse(transaction, resource.getName(), room.getName(), colony.getName()));
+        }
+        return transactionResponses;
+    }
+
+    @GetMapping("/transactions/amount")
+    AmountResponse transactionAmount() {
+        Collection<Transaction> transactions = (Collection<Transaction>) transactionRepository.findAll();
+        return new AmountResponse(transactions.size());
     }
 
     @GetMapping("/transaction/{id}")

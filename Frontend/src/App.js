@@ -16,8 +16,9 @@ import ResourcesPage from './ResourcesPage';
 import WorkPageContainer from "./Containers/WorkPageContainer";
 import ReportPageContainer from "./Containers/ReportPageContainer";
 import ReviewPageContainer from "./Containers/ReviewPageContainer";
+import AnimalsEditContainer from "./Containers/AnimalsEditContainer";
+import RoomsEditContainer from "./Containers/RoomsEditContainer";
 import LoadingScreen from './LoadingScreen';
-
 
 class App extends React.Component{
 
@@ -36,7 +37,7 @@ class App extends React.Component{
                 roleAccess: ["USER"],
                 pageComponent: WorkPageContainer},
             {
-                path: "/report",
+                path: "/report/:occupationId",
                 name: "Report your work progress", showNavigationTab: false, 
                 roleAccess: ["USER"],
                 pageComponent: ReportPageContainer},
@@ -46,13 +47,23 @@ class App extends React.Component{
                 roleAccess: ["MANAGER"],
                 pageComponent: ReviewPageContainer},
             {
+                path: "/animals/:animalId",
+                name: "Editing animals", showNavigationTab: false,
+                roleAccess: ["USER"],
+                pageComponent: AnimalsEditContainer},
+            {
                 path: "/animals",
                 name: "Animals", showNavigationTab: true, 
                 roleAccess: ["USER"],
                 pageComponent: AnimalsPageContainer},
             {
+                path: "/rooms/:roomId",
+                name: "Editing rooms", showNavigationTab: false,
+                roleAccess: ["USER"],
+                pageComponent: RoomsEditContainer},
+            {
                 path: "/rooms",
-                name: "Rooms", showNavigationTab: true, 
+                name: "Rooms", showNavigationTab: true,
                 roleAccess: ["USER"],
                 pageComponent: RoomsPageContainer},
             {

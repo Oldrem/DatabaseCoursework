@@ -50,7 +50,7 @@ class RoomsPage extends Component {
                 <td style={{whiteSpace: 'nowrap'}}>{room.room.area}</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" to={"/colonist/" + room.room.roomId}>Edit</Button>
+                        <Link to={'/rooms/' + room.room.roomId}><Button >Edit.</Button></Link>
                         <Button size="sm" onClick={() => this.remove(room.room.roomId)}>Delete</Button>
                     </ButtonGroup>
                 </td>
@@ -61,7 +61,7 @@ class RoomsPage extends Component {
             <div>
                 <Container fluid>
                     <div className="float-right">
-                        <Button color="success" tag={Link} to="/colonists/new">Add a room?</Button>
+                        <Button color="success" tag={Link} to="/rooms/new">Add a room?</Button>
                     </div>
                     <h3>ResidentSleepers and workplaces:</h3>
                     <Table className="mt-4">
