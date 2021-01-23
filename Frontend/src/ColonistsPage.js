@@ -64,10 +64,12 @@ class Colonists extends Component {
                 relLevel,
                 colonist.birthDate,
                 colonist.colonyJoinDate,
-                <ButtonGroup>
-                            <ProtectedContainer roles={["MANAGER"]}> <Button to={"/colonist/" + colonist.colonistId}>Edit</Button> </ProtectedContainer>
-                            <ProtectedContainer roles={["MANAGER"]}> <Button onClick={() => this.remove(colonist.colonistId)}>Delete</Button> </ProtectedContainer>
-                </ButtonGroup>,
+                <ProtectedContainer roles ={["MANAGER", "ADMIN"]}> 
+                    <ButtonGroup>
+                                <Button to={"/colonist/" + colonist.colonistId}>Edit</Button>
+                                <Button onClick={() => this.remove(colonist.colonistId)}>Delete</Button> 
+                    </ButtonGroup>
+                </ProtectedContainer>,
             ]
         });
 

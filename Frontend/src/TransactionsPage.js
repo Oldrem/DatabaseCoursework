@@ -4,6 +4,7 @@ import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import LoadingScreen from './LoadingScreen';
 import SuperTable from './SuperTable';
+import ProtectedContainer from './ProtectedContainer';
 
 class transactions extends Component {
 
@@ -59,10 +60,12 @@ class transactions extends Component {
                 transaction.resourceName,
                 transaction.transaction.amount,
                 transaction.roomName,
-                <ButtonGroup>
-                            <Button to={"/transaction/" + transaction.transactionId}>Edit</Button>
-                            <Button onClick={() => this.remove(transaction.transactionId)}>Delete</Button>
-                </ButtonGroup>,
+                <ProtectedContainer roles ={["MANAGER", "ADMIN"]}> 
+                    <ButtonGroup>
+                                <Button to={"/transaction/" + transaction.transactionId}>Edit</Button>
+                                <Button onClick={() => this.remove(transaction.transactionId)}>Delete</Button>
+                    </ButtonGroup>
+                </ProtectedContainer>,
             ]
         });
 
@@ -73,7 +76,7 @@ class transactions extends Component {
             {name: "Resource"},
             {name: "Amount"},
             {name: "Taken from/put in"},
-            {name: "Actions", class: "Shrink"},
+            {name: "", class: "Shrink"},
         ];
 
         const addButton = <Button to="/transactions/new">Add transaction?</Button>;
