@@ -10,11 +10,17 @@ class NavigationBar extends Component {
         super(props)
     }
 
-    isUserOfRole(role)
+    isUserOfRole(pageRoles)
     {
-        return role.includes("USER"); //TODO check for role 
+        let out = false;
+        this.props.roles.forEach(userRole => {
+            pageRoles.forEach(pageRole => {
+                if (userRole === pageRole) out = true; // Fuck JS c:
+            })
+        });
+        return out;
     }
-
+    
     render() {
 
         const buttonsMetainfo = this.props.pages;
