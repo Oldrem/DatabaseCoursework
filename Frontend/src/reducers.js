@@ -9,9 +9,12 @@ const appReducer = (state={}, action)=>{
             return Object.assign({}, state, {user: null});
         }
         case("APP_SET_ROLES"):{
-            console.log("setting roles to" + action.value);
             return Object.assign({}, state, {roles: action.value});
         }
+        case("APP_SET_COLONIST"):{
+            return Object.assign({}, state, {colonist: action.value});
+        }
+
 
         case("APP_UPDATE_POINTS_SUCCESS"):{
             return Object.assign({}, state, {points: action.value});

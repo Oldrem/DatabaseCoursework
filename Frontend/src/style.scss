@@ -26,6 +26,8 @@ body {
 // All buttons
 
 button {
+  margin-right: 2px;
+  margin-left: 2px;
   background-color: #6A522E;
   border-style: solid;
   border-width: 3px;
@@ -194,11 +196,6 @@ table {
 table .btn-group {  
   white-space: nowrap;
 }
-
-table .btn-group {
-  
-}
-
 table td, table th {
   padding: 1px 10px 1px 10px;
   text-align: left;

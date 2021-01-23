@@ -33,17 +33,17 @@ class App extends React.Component{
             {
                 path: "/colonists",
                 name: "Colony residents", showNavigationTab: true, 
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: ColonistsContainer},
             {
                 path: "/work",
                 name: "My work", showNavigationTab: true, 
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: WorkPageContainer},
             {
                 path: "/report/:occupationId",
                 name: "Report your work progress", showNavigationTab: false, 
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: ReportPageContainer},
             {
                 path: "/review",
@@ -53,67 +53,67 @@ class App extends React.Component{
             {
                 path: "/animals/:animalId",
                 name: "Editing animals", showNavigationTab: false,
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: AnimalsEditContainer},
             {
                 path: "/animals",
                 name: "Animals", showNavigationTab: true, 
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: AnimalsPageContainer},
             {
                 path: "/rooms/:roomId",
                 name: "Editing rooms", showNavigationTab: false,
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: RoomsEditContainer},
             {
                 path: "/rooms",
                 name: "Rooms", showNavigationTab: true,
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: RoomsPageContainer},
             {
                 path: "/occupations/:occupationId",
                 name: "Editing occupations", showNavigationTab: false,
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: OccupationsEditContainer},
             {
                 path: "/occupations",
                 name: "Occupations", showNavigationTab: true,
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: OccupationsPageContainer},
             {
                 path: "/resources/:resourceId",
                 name: "Editing occupations", showNavigationTab: false,
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: ResourcesEditContainer},
             {
                 path: "/resources",
                 name: "Our resources", showNavigationTab: true, 
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: ResourcesPage},
             {
                 path: "/transactions",
                 name: "Trade deals", showNavigationTab: true, 
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: TransactionsPageContainer},
             {
                 path: "/colonies/:colonyId",
                 name: "Editing colonies", showNavigationTab: false,
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: ColoniesEditContainer},
             {
                 path: "/colonies",
                 name: "Other colonies", showNavigationTab: true, 
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: ColoniesPageContainer},
             {
                 path: "/edit",
                 name: "Edit user details", showNavigationTab: false,  
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: HomeEditContainer},
             {
                 path: "/",
                 name: "Userpage", showNavigationTab: true,  
-                roleAccess: ["USER"],
+                roleAccess: ["USER", "MANAGER"],
                 pageComponent: HomeContainer},
         ];
         this.state = {pages: pages, isLoading: true};
@@ -126,8 +126,13 @@ class App extends React.Component{
             .then(data => this.props.dispatch({
                 type: "APP_SET_ROLES",
                 value: data}))
-            .then(() => this.setState({isLoading: false}))
-            .then(() => console.log(this.props.roles))
+            .then( () => fetch('/api/colonist/' + this.props.user)
+                .then(response => response.json())
+                .then(data => this.props.dispatch({
+                    type: "APP_SET_COLONIST",
+                    value: data}))
+                .then(() => this.setState({isLoading: false}))
+            )
     }
 
     isUserOfRole(pageRoles)

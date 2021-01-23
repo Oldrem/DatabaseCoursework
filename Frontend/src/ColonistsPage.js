@@ -17,7 +17,11 @@ class Colonists extends Component {
         this.setState({isLoading: true});
         fetch('api/colonists')
             .then(response => response.json())
-            .then(data => this.setState({colonists: data, isLoading: false}));
+            .then(data => this.setState({colonists: data}))
+            .then(() => fetch('api/relationship/' + this.props.colonist.colonistId)
+                .then(response => response.json())
+                .then(data => this.setState({relationships: data, isLoading: false}))
+            );
     }
 
     async remove(id) {
@@ -40,11 +44,17 @@ class Colonists extends Component {
             return <LoadingScreen/>;
         }
 
+        const relationships = this.state.relationships;
+
         const rows = colonists.map(colonist => {
+
+            let rel = relationships.find(rel => rel. colonist.colonistId);
+            let relLevel = rel ? rel.level : 0;
             return [
                 colonist.firstName,
                 colonist.lastName,
                 colonist.nickname,
+                relLevel,
                 colonist.birthDate,
                 colonist.colonyJoinDate,
                 <ButtonGroup>
@@ -58,6 +68,7 @@ class Colonists extends Component {
             {name: "First Name"},
             {name: "Last Name"},
             {name: "Nickname"},
+            {name: "Your opinion"},
             {name: "Birth Date"},
             {name: "Colony Join Date"},
             {name: "Actions", class: "Shrink"},
@@ -73,4 +84,11 @@ class Colonists extends Component {
 }
 
 
-export default Colonists;
+
+const mapStateToProps = function(store) {
+    return {
+        colonist: store.appState.colonist
+    }
+};
+
+export default connect(mapStateToProps)(Colonists);
