@@ -6,7 +6,8 @@ class SuperTable extends Component
     constructor(props)
     {
         super(props);
-        this.setState({filter: props.search});
+        let filter = props.search ? props.search : "";
+        this.state = {filter: filter};
     }
 
     render() {
@@ -17,32 +18,34 @@ class SuperTable extends Component
             }       
         )
 
+        const filter = this.state.filter;
+        const isFilterUsed = filter.length > 0;
+
         i = 0;
         const rows = this.props.rows.map(row => {
-            let content = row.map(column => {
-                return <td>{column}</td>
-            });
+            if (!isFilterUsed || row.toString().includes(filter))
+            {
+                let ii = 0;
+                let content = row.map(column => {
+                    return <td key={ii++}>{column}</td>
+                });
 
-            return <tr key={i++}>
-                {content}
-            </tr>
+                return <tr key={i++}>{content}</tr>;
+            }
         });
-
-
-        console.log(this.state.filter);
 
         const inputClass = this.props.enableSearch ? "" : "Hidden";
 
         return (
             <div>
                 <Container fluid>
-                    <div class="TableTitle">
+                    <div className="TableTitle">
                         <div><h2>{this.props.title}</h2></div>
                         <div>
                             filter: 
                             <input className={inputClass} type="text" 
                                 value={this.state.filter}
-                                onChange={value => this.setState({filter: value})}/>
+                                onChange={event => this.setState({filter: event.target.value})}/>
                             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                             {this.props.addButton}
                         </div> 
