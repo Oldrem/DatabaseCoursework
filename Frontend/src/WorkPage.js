@@ -84,7 +84,7 @@ class WorkPage extends React.Component{
                 return <tr key={report.reportId}>
                     <td style={{whiteSpace: 'nowrap'}}>{report.description}</td>
                     <td style={{whiteSpace: 'nowrap'}}>{report.date}</td>
-                    <td style={{whiteSpace: 'nowrap'}}>In progress</td>
+                    <td style={{whiteSpace: 'nowrap'}}>Is being reviewed.</td>
                 </tr>
             }
         });
