@@ -14,7 +14,7 @@ class OccupationsPage extends Component {
 
     componentDidMount() {
         this.setState({isLoading: true});
-        fetch('api/occupations')
+        fetch('/api/occupations')
             .then(response => response.json())
             .then(data => this.setState({occupations: data, isLoading: false}))
             .then(() => this.generateShortDescripiptions());
@@ -64,7 +64,7 @@ class OccupationsPage extends Component {
                 <td className="Shrink">{occupation.timeEnds}</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" to={"/occupation/" + occupation.occupationId}>Edit</Button>
+                        <Link to={'/occupations/' + occupation.occupationId}><Button >Edit.</Button></Link>
                         <Button size="sm" onClick={() => this.remove(occupation.occupationId)}>Delete</Button>
                     </ButtonGroup>
                 </td>

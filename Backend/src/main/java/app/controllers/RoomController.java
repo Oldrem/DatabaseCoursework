@@ -46,6 +46,13 @@ public class RoomController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @GetMapping("/roomname/{name}")
+    ResponseEntity<?> getRoomByName(@PathVariable String name) {
+        Optional<Room> room = roomRepository.findByName(name);
+        return room.map(response -> ResponseEntity.ok().body(response))
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
     @PostMapping("/room")
     ResponseEntity<Room> createRoom(@Valid @RequestBody Room room) throws URISyntaxException {
         Room result = roomRepository.save(room);

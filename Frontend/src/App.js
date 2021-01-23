@@ -19,6 +19,9 @@ import ReviewPageContainer from "./Containers/ReviewPageContainer";
 import AnimalsEditContainer from "./Containers/AnimalsEditContainer";
 import RoomsEditContainer from "./Containers/RoomsEditContainer";
 import TransactionsPageContainer from "./Containers/TransactionsPageContainer";
+import OccupationsEditContainer from "./Containers/OccupationsEditContainer";
+import ColoniesEditContainer from "./Containers/ColoniesEditContainer";
+import ResourcesEditContainer from "./Containers/ResourcesEditContainer";
 import LoadingScreen from './LoadingScreen';
 
 class App extends React.Component{
@@ -68,10 +71,20 @@ class App extends React.Component{
                 roleAccess: ["USER"],
                 pageComponent: RoomsPageContainer},
             {
+                path: "/occupations/:occupationId",
+                name: "Editing occupations", showNavigationTab: false,
+                roleAccess: ["USER"],
+                pageComponent: OccupationsEditContainer},
+            {
                 path: "/occupations",
-                name: "Occupations", showNavigationTab: true, 
+                name: "Occupations", showNavigationTab: true,
                 roleAccess: ["USER"],
                 pageComponent: OccupationsPageContainer},
+            {
+                path: "/resources/:resourceId",
+                name: "Editing occupations", showNavigationTab: false,
+                roleAccess: ["USER"],
+                pageComponent: ResourcesEditContainer},
             {
                 path: "/resources",
                 name: "Our resources", showNavigationTab: true, 
@@ -82,6 +95,11 @@ class App extends React.Component{
                 name: "Trade deals", showNavigationTab: true, 
                 roleAccess: ["USER"],
                 pageComponent: TransactionsPageContainer},
+            {
+                path: "/colonies/:colonyId",
+                name: "Editing colonies", showNavigationTab: false,
+                roleAccess: ["USER"],
+                pageComponent: ColoniesEditContainer},
             {
                 path: "/colonies",
                 name: "Other colonies", showNavigationTab: true, 
