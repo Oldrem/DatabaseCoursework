@@ -4,6 +4,7 @@ import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import LoadingScreen from './LoadingScreen';
 import SuperTable from './SuperTable';
+import ProtectedContainer from './ProtectedContainer';
 
 class Colonists extends Component {
 
@@ -45,10 +46,17 @@ class Colonists extends Component {
         }
 
         const relationships = this.state.relationships;
+        const ownColonistID = this.props.colonist.colonistId;
 
         const rows = colonists.map(colonist => {
-            let rel = relationships.find(rel => rel.relationshipId.colonist2Id === colonist.colonistId);
-            let relLevel = rel ? rel.level : 0;
+            let relLevel;
+            if (colonist.colonistId === ownColonistID)
+                relLevel = "It's you!"
+            else
+            {
+                let rel = relationships.find(rel => rel.relationshipId.colonist2Id === colonist.colonistId);
+                relLevel = rel ? rel.level : 0;
+            }
             return [
                 colonist.firstName,
                 colonist.lastName,
@@ -57,8 +65,8 @@ class Colonists extends Component {
                 colonist.birthDate,
                 colonist.colonyJoinDate,
                 <ButtonGroup>
-                            <Button to={"/colonist/" + colonist.colonistId}>Edit</Button>
-                            <Button onClick={() => this.remove(colonist.colonistId)}>Delete</Button>
+                            <ProtectedContainer roles={["MANAGER"]}> <Button to={"/colonist/" + colonist.colonistId}>Edit</Button> </ProtectedContainer>
+                            <ProtectedContainer roles={["MANAGER"]}> <Button onClick={() => this.remove(colonist.colonistId)}>Delete</Button> </ProtectedContainer>
                 </ButtonGroup>,
             ]
         });
@@ -70,7 +78,7 @@ class Colonists extends Component {
             {name: "Your opinion"},
             {name: "Birth Date"},
             {name: "Colony Join Date"},
-            {name: "Actions", class: "Shrink"},
+            {name: "", class: "Shrink"},
         ];
 
         const addButton = <Button to="/colonists/new">Add Colonist?</Button>;
